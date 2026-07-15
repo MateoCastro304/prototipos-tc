@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿La pieza requiere alguna tercerización? · Tornería Castro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+  <nav class="proto-nav" aria-label="Navegación entre prototipos">
+    <span class="proto-nav__label">Prototipos</span>
+    <div class="proto-nav__links">
+      <a class="proto-nav__link" href="P-DashBrdCotizaciones.html">P-016 Dashboard</a>
+      <a class="proto-nav__link" href="P-DetalleCotizacion.html">P-018 Detalle</a>
+      <a class="proto-nav__link" href="P-DetalleCotizacionPendiente.html">Detalle pendiente</a>
+      <a class="proto-nav__link" href="P-WizardIntro.html">P-019 Asistente inicio</a>
+      <a class="proto-nav__link" href="P-WizardDatosGenerales.html">P-020 Datos generales</a>
+      <a class="proto-nav__link" href="P-WizardPiezas.html">P-021 Piezas</a>
+      <a class="proto-nav__link" href="P-WizardAgregarPieza.html">P-022 Agregar pieza</a>
+      <a class="proto-nav__link" href="P-WizardMaterial.html">P-024 Material</a>
+      <a class="proto-nav__link" href="P-WizardSeleccionarProveedor.html">P-025 Sel. proveedor</a>
+      <a class="proto-nav__link" href="P-WizardProcesosPropios.html">P-026 Procesos</a>
+      <a class="proto-nav__link" href="P-WizardProcesosTercerizados.html">P-027 Procesos (alt.)</a>
+      <a class="proto-nav__link" href="P-WizardSeleccionarProceso.html">P-028 Sel. proceso</a>
+      <a class="proto-nav__link proto-nav__link--active" href="P-WizardTercerizacionPieza.html">P-029 Tercerización</a>
+      <a class="proto-nav__link" href="P-WizardAgregarTratamiento.html">Agregar tratamiento</a>
+      <a class="proto-nav__link" href="P-WizardCostosPieza.html">P-030 Costos pieza</a>
+      <a class="proto-nav__link" href="P-WizardDescuentos.html">P-031 Descuentos</a>
+      <a class="proto-nav__link" href="P-WizardSenia.html">P-032 Seña</a>
+      <a class="proto-nav__link" href="P-WizardResumen.html">P-033 Resumen</a>
+      <a class="proto-nav__link" href="P-WizardConfirmacion.html">P-034 Confirmación</a>
+      <a class="proto-nav__link" href="P-RegistrarSolicitud.html">Nueva solicitud</a>
+    </div>
+  </nav>
+
+  <div class="modal-page">
+    <div class="modal-page__ghost-header"></div>
+    <div class="modal-page__ghost-bar"></div>
+    <div class="modal-page__ghost-card"></div>
+
+    <div class="modal-scrim">
+      <div class="modal modal--sm">
+        <div class="modal__body modal__body--center">
+          <span class="prompt-icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none">
+              <path d="M13 3a3.5 3.5 0 0 0-4.6 4.4L3 13v3h3l5.6-5.4A3.5 3.5 0 0 0 16 6l-2.3 2.3-2-2L14 3.7 13 3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <h2 class="intro-card__title">¿La pieza requiere alguna tercerización?</h2>
+          <p class="intro-card__desc">Antes de cerrar la pieza <strong>EDA-119</strong>, indicá si necesita tratamiento térmico, superficial u otra tercerización.</p>
+
+          <div class="option-list">
+            <div class="option-list__item">
+              <span class="option-list__radio" aria-hidden="true"></span>
+              Tratamiento térmico
+            </div>
+            <div class="option-list__item">
+              <span class="option-list__radio" aria-hidden="true"></span>
+              Tratamiento superficial (zincado, galvanizado...)
+            </div>
+            <div class="option-list__item">
+              <span class="option-list__radio" aria-hidden="true"></span>
+              Otra tercerización
+            </div>
+            <div class="option-list__item option-list__item--selected">
+              <span class="option-list__radio option-list__radio--checked" aria-hidden="true"></span>
+              No requiere ninguna
+            </div>
+          </div>
+        </div>
+        <div class="modal__footer modal__footer--end">
+          <button type="button" class="btn btn--outline">Sí, agregar tercerizado</button>
+          <button type="button" class="btn btn--primary">Continuar ›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

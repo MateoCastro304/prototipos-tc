@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nueva cotización · Datos generales · Tornería Castro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+  <nav class="proto-nav" aria-label="Navegación entre prototipos">
+    <span class="proto-nav__label">Prototipos</span>
+    <div class="proto-nav__links">
+      <a class="proto-nav__link" href="P-DashBrdCotizaciones.html">P-016 Dashboard</a>
+      <a class="proto-nav__link" href="P-DetalleCotizacion.html">P-018 Detalle</a>
+      <a class="proto-nav__link" href="P-DetalleCotizacionPendiente.html">Detalle pendiente</a>
+      <a class="proto-nav__link" href="P-WizardIntro.html">P-019 Asistente inicio</a>
+      <a class="proto-nav__link proto-nav__link--active" href="P-WizardDatosGenerales.html">P-020 Datos generales</a>
+      <a class="proto-nav__link" href="P-WizardPiezas.html">P-021 Piezas</a>
+      <a class="proto-nav__link" href="P-WizardAgregarPieza.html">P-022 Agregar pieza</a>
+      <a class="proto-nav__link" href="P-WizardMaterial.html">P-024 Material</a>
+      <a class="proto-nav__link" href="P-WizardSeleccionarProveedor.html">P-025 Sel. proveedor</a>
+      <a class="proto-nav__link" href="P-WizardProcesosPropios.html">P-026 Procesos</a>
+      <a class="proto-nav__link" href="P-WizardProcesosTercerizados.html">P-027 Procesos (alt.)</a>
+      <a class="proto-nav__link" href="P-WizardSeleccionarProceso.html">P-028 Sel. proceso</a>
+      <a class="proto-nav__link" href="P-WizardTercerizacionPieza.html">P-029 Tercerización</a>
+      <a class="proto-nav__link" href="P-WizardAgregarTratamiento.html">Agregar tratamiento</a>
+      <a class="proto-nav__link" href="P-WizardCostosPieza.html">P-030 Costos pieza</a>
+      <a class="proto-nav__link" href="P-WizardDescuentos.html">P-031 Descuentos</a>
+      <a class="proto-nav__link" href="P-WizardSenia.html">P-032 Seña</a>
+      <a class="proto-nav__link" href="P-WizardResumen.html">P-033 Resumen</a>
+      <a class="proto-nav__link" href="P-WizardConfirmacion.html">P-034 Confirmación</a>
+      <a class="proto-nav__link" href="P-RegistrarSolicitud.html">Nueva solicitud</a>
+    </div>
+  </nav>
+
+  <div class="wizard">
+    <header class="wizard-header">
+      <div class="wizard-header__left">
+        <button type="button" class="wizard-header__back" aria-label="Volver">
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M10 3L4.5 8L10 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <span class="wizard-header__title">Nueva cotización</span>
+        <span class="wizard-header__sep">·</span>
+        <span class="wizard-header__meta">EDASA — desde SOL-0428</span>
+      </div>
+      <button type="button" class="btn btn--outline">Guardar como borrador</button>
+    </header>
+
+    <nav class="wizard-stepper" aria-label="Progreso del asistente">
+      <ol class="wizard-stepper__list">
+        <li class="wizard-stepper__step">
+          <span class="wizard-stepper__circle wizard-stepper__circle--current">1</span>
+          <span class="wizard-stepper__label wizard-stepper__label--active">Datos generales</span>
+        </li>
+        <li class="wizard-stepper__line wizard-stepper__line--pending" aria-hidden="true"></li>
+        <li class="wizard-stepper__step">
+          <span class="wizard-stepper__circle wizard-stepper__circle--pending">2</span>
+          <span class="wizard-stepper__label wizard-stepper__label--pending">Piezas</span>
+        </li>
+        <li class="wizard-stepper__line wizard-stepper__line--pending" aria-hidden="true"></li>
+        <li class="wizard-stepper__step">
+          <span class="wizard-stepper__circle wizard-stepper__circle--pending">3</span>
+          <span class="wizard-stepper__label wizard-stepper__label--pending">Descuentos</span>
+        </li>
+        <li class="wizard-stepper__line wizard-stepper__line--pending" aria-hidden="true"></li>
+        <li class="wizard-stepper__step">
+          <span class="wizard-stepper__circle wizard-stepper__circle--pending">4</span>
+          <span class="wizard-stepper__label wizard-stepper__label--pending">Seña</span>
+        </li>
+        <li class="wizard-stepper__line wizard-stepper__line--pending" aria-hidden="true"></li>
+        <li class="wizard-stepper__step">
+          <span class="wizard-stepper__circle wizard-stepper__circle--pending">5</span>
+          <span class="wizard-stepper__label wizard-stepper__label--pending">Resumen</span>
+        </li>
+        <li class="wizard-stepper__line wizard-stepper__line--pending" aria-hidden="true"></li>
+        <li class="wizard-stepper__step">
+          <span class="wizard-stepper__circle wizard-stepper__circle--pending">6</span>
+          <span class="wizard-stepper__label wizard-stepper__label--pending">Confirmación</span>
+        </li>
+      </ol>
+    </nav>
+
+    <main class="wizard-content">
+      <section class="form-card" aria-label="Datos generales de la cotización">
+        <h2 class="form-card__title">Datos generales de la cotización</h2>
+        <div class="form-grid">
+          <div class="form-field">
+            <label class="form-field__label">Cliente *</label>
+            <div class="form-field__row">
+              <input class="form-field__input" type="text" value="EDASA" readonly>
+              <button type="button" class="form-field__icon-btn" aria-label="Buscar cliente">
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="13.5" y1="13.5" x2="18" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </div>
+            <span class="form-field__hint">Forma de pago: 30 días · Cuenta corriente</span>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label">Solicitud de origen</label>
+            <select class="form-field__select">
+              <option>SOL-0428</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label">N° de cotización</label>
+            <input class="form-field__input form-field__input--disabled" type="text" value="COT-2456 (auto)" disabled>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label">Fecha de cotización *</label>
+            <div class="form-field__input-wrap form-field__input--calendar">
+              <input class="form-field__input" type="text" value="11/07/2025" readonly>
+              <svg class="form-field__calendar-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <rect x="2" y="3" width="12" height="11" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+                <line x1="2" y1="6.5" x2="14" y2="6.5" stroke="currentColor" stroke-width="1.3"/>
+                <line x1="5" y1="1.5" x2="5" y2="4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                <line x1="11" y1="1.5" x2="11" y2="4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label">Moneda *</label>
+            <div class="segmented">
+              <span class="segmented__option segmented__option--active">ARS $</span>
+              <span class="segmented__option">USD</span>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label">Valor del dólar *</label>
+            <input class="form-field__input" type="text" value="$ 1.180,00">
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label">Plazo de validez (días)</label>
+            <input class="form-field__input" type="text" value="7">
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label">Vencimiento de oferta</label>
+            <input class="form-field__input form-field__input--disabled" type="text" value="18/07/2025 (calc.)" disabled>
+          </div>
+
+          <div class="form-field form-field--full">
+            <label class="form-field__label">Observaciones</label>
+            <textarea class="form-field__textarea" placeholder="Notas internas de la cotización..."></textarea>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wizard-footer">
+      <button type="button" class="btn btn--outline">‹ Atrás</button>
+      <span class="wizard-footer__step">Paso 1 de 6 · Datos generales</span>
+      <button type="button" class="btn btn--primary">Siguiente ›</button>
+    </footer>
+  </div>
+</body>
+</html>

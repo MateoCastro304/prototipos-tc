@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COT-2456 · Tornería Castro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+  <nav class="proto-nav" aria-label="Navegación entre prototipos">
+    <span class="proto-nav__label">Prototipos</span>
+    <div class="proto-nav__links">
+      <a class="proto-nav__link" href="P-DashBrdCotizaciones.html">P-016 Dashboard</a>
+      <a class="proto-nav__link proto-nav__link--active" href="P-DetalleCotizacion.html">P-018 Detalle</a>
+      <a class="proto-nav__link" href="P-DetalleCotizacionPendiente.html">Detalle pendiente</a>
+      <a class="proto-nav__link" href="P-WizardIntro.html">P-019 Asistente inicio</a>
+      <a class="proto-nav__link" href="P-WizardDatosGenerales.html">P-020 Datos generales</a>
+      <a class="proto-nav__link" href="P-WizardPiezas.html">P-021 Piezas</a>
+      <a class="proto-nav__link" href="P-WizardAgregarPieza.html">P-022 Agregar pieza</a>
+      <a class="proto-nav__link" href="P-WizardMaterial.html">P-024 Material</a>
+      <a class="proto-nav__link" href="P-WizardSeleccionarProveedor.html">P-025 Sel. proveedor</a>
+      <a class="proto-nav__link" href="P-WizardProcesosPropios.html">P-026 Procesos</a>
+      <a class="proto-nav__link" href="P-WizardProcesosTercerizados.html">P-027 Procesos (alt.)</a>
+      <a class="proto-nav__link" href="P-WizardSeleccionarProceso.html">P-028 Sel. proceso</a>
+      <a class="proto-nav__link" href="P-WizardTercerizacionPieza.html">P-029 Tercerización</a>
+      <a class="proto-nav__link" href="P-WizardAgregarTratamiento.html">Agregar tratamiento</a>
+      <a class="proto-nav__link" href="P-WizardCostosPieza.html">P-030 Costos pieza</a>
+      <a class="proto-nav__link" href="P-WizardDescuentos.html">P-031 Descuentos</a>
+      <a class="proto-nav__link" href="P-WizardSenia.html">P-032 Seña</a>
+      <a class="proto-nav__link" href="P-WizardResumen.html">P-033 Resumen</a>
+      <a class="proto-nav__link" href="P-WizardConfirmacion.html">P-034 Confirmación</a>
+      <a class="proto-nav__link" href="P-RegistrarSolicitud.html">Nueva solicitud</a>
+    </div>
+  </nav>
+  <div class="app">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <div class="sidebar__logo">TC</div>
+        <div class="sidebar__brand-text">
+          <span class="sidebar__brand-name">Tornería Castro</span>
+          <span class="sidebar__brand-sub">Gestión &amp; Producción</span>
+        </div>
+      </div>
+
+      <nav class="sidebar__nav">
+        <div class="sidebar__section">
+          <span class="sidebar__section-label">Comercial</span>
+          <ul class="sidebar__list">
+            <li>
+              <a class="sidebar__link" href="#">
+                <span class="sidebar__icon" aria-hidden="true"></span>
+                Inicio
+              </a>
+            </li>
+            <li>
+              <a class="sidebar__link" href="#">
+                <span class="sidebar__icon" aria-hidden="true"></span>
+                Solicitudes
+              </a>
+            </li>
+            <li>
+              <a class="sidebar__link sidebar__link--active" href="#" aria-current="page">
+                <span class="sidebar__icon" aria-hidden="true"></span>
+                Cotizaciones
+              </a>
+            </li>
+            <li>
+              <a class="sidebar__link" href="#">
+                <span class="sidebar__icon" aria-hidden="true"></span>
+                Órdenes de Compra
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar__section">
+          <span class="sidebar__section-label">Catálogos</span>
+          <ul class="sidebar__list">
+            <li>
+              <a class="sidebar__link" href="#">
+                <span class="sidebar__icon" aria-hidden="true"></span>
+                Clientes
+              </a>
+            </li>
+            <li>
+              <a class="sidebar__link" href="#">
+                <span class="sidebar__icon" aria-hidden="true"></span>
+                Rubros
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- ===================== MAIN ===================== -->
+    <div class="main">
+
+      <!-- Topbar -->
+      <header class="topbar">
+        <nav class="topbar__breadcrumb" aria-label="breadcrumb">
+          <span class="topbar__breadcrumb-item">Comercial</span>
+          <span class="topbar__breadcrumb-sep">/</span>
+          <span class="topbar__breadcrumb-item">Cotizaciones</span>
+          <span class="topbar__breadcrumb-sep">/</span>
+          <span class="topbar__breadcrumb-item topbar__breadcrumb-item--current">COT-2456</span>
+        </nav>
+
+        <div class="topbar__search">
+          <svg class="topbar__search-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="13.5" y1="13.5" x2="18" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <input class="topbar__search-input" type="text" placeholder="Buscar...">
+        </div>
+      </header>
+
+      <!-- Content -->
+      <main class="content">
+
+        <!-- Detail header -->
+        <div class="detail-header">
+          <div class="detail-header__left">
+            <button type="button" class="detail-header__back" aria-label="Volver">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M10 3L4.5 8L10 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="detail-header__title-row">
+              <h1 class="detail-header__title">COT-2456</h1>
+              <span class="badge badge--cotizado">Cotizado</span>
+              <span class="detail-header__meta">EDASA · 11/07/2025</span>
+            </div>
+          </div>
+
+          <div class="detail-header__actions">
+            <button type="button" class="btn btn--outline">Historial de variaciones</button>
+            <button type="button" class="btn btn--outline">Editar</button>
+            <button type="button" class="btn btn--outline">Generar informe</button>
+            <button type="button" class="btn btn--success">Registrar OC</button>
+          </div>
+        </div>
+
+        <!-- Stepper -->
+        <section class="stepper-card" aria-label="Estado de la cotización">
+          <ol class="stepper">
+            <li class="stepper__step">
+              <span class="stepper__circle stepper__circle--done" aria-hidden="true">
+                <svg viewBox="0 0 12 10" fill="none">
+                  <path d="M1 5L4.5 8.5L11 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="stepper__label stepper__label--active">Pendiente</span>
+            </li>
+            <li class="stepper__line stepper__line--done" aria-hidden="true"></li>
+            <li class="stepper__step">
+              <span class="stepper__circle stepper__circle--current" aria-hidden="true">2</span>
+              <span class="stepper__label stepper__label--active">Cotizado</span>
+            </li>
+            <li class="stepper__line stepper__line--pending" aria-hidden="true"></li>
+            <li class="stepper__step">
+              <span class="stepper__circle stepper__circle--pending" aria-hidden="true">3</span>
+              <span class="stepper__label stepper__label--pending">Adjudicado</span>
+            </li>
+          </ol>
+        </section>
+
+        <!-- Detail layout -->
+        <div class="detail-layout">
+
+          <!-- Main column -->
+          <div class="detail-main">
+
+            <!-- Datos generales -->
+            <section class="info-card" aria-label="Datos generales">
+              <h2 class="info-card__title">Datos generales</h2>
+              <div class="info-grid">
+                <div class="info-grid__item">
+                  <span class="info-grid__label">Cliente</span>
+                  <span class="info-grid__value">EDASA</span>
+                </div>
+                <div class="info-grid__item">
+                  <span class="info-grid__label">Moneda</span>
+                  <span class="info-grid__value">ARS</span>
+                </div>
+                <div class="info-grid__item">
+                  <span class="info-grid__label">Valor dólar</span>
+                  <span class="info-grid__value">$ 1.180</span>
+                </div>
+                <div class="info-grid__item">
+                  <span class="info-grid__label">Fecha cotización</span>
+                  <span class="info-grid__value">11/07/2025</span>
+                </div>
+                <div class="info-grid__item">
+                  <span class="info-grid__label">Vtos. oferta</span>
+                  <span class="info-grid__value">18/07/2025</span>
+                </div>
+                <div class="info-grid__item">
+                  <span class="info-grid__label">Validez</span>
+                  <span class="info-grid__value">7 días</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- Detalles (piezas) -->
+            <section class="piece-card" aria-label="Detalles de piezas">
+              <div class="piece-card__header">
+                <h2 class="piece-card__title">Detalles (piezas)</h2>
+              </div>
+              <div class="table-card__scroll">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="table__th">#</th>
+                      <th class="table__th">Plano</th>
+                      <th class="table__th">Descripción</th>
+                      <th class="table__th table__th--right">Cant.</th>
+                      <th class="table__th table__th--right">P. Unit.</th>
+                      <th class="table__th table__th--right">Subtotal</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="table__row">
+                      <td class="table__td table__td--muted">1</td>
+                      <td class="table__td table__td--code">EDA-118</td>
+                      <td class="table__td">Buje de bronce Ø40</td>
+                      <td class="table__td table__td--right">8</td>
+                      <td class="table__td table__td--right table__td--mono">$ 12.300</td>
+                      <td class="table__td table__td--right table__td--price">$ 98.400</td>
+                    </tr>
+                    <tr class="table__row">
+                      <td class="table__td table__td--muted">2</td>
+                      <td class="table__td table__td--code">EDA-119</td>
+                      <td class="table__td">Eje ranurado</td>
+                      <td class="table__td table__td--right">1</td>
+                      <td class="table__td table__td--right table__td--mono">$ 61.000</td>
+                      <td class="table__td table__td--right table__td--price">$ 61.000</td>
+                    </tr>
+                    <tr class="table__row">
+                      <td class="table__td table__td--muted">3</td>
+                      <td class="table__td table__td--code table__td--code-muted">OC-004</td>
+                      <td class="table__td">Tapa (reparación)</td>
+                      <td class="table__td table__td--right">1</td>
+                      <td class="table__td table__td--right table__td--mono">$ 25.000</td>
+                      <td class="table__td table__td--right table__td--price">$ 25.000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+          </div>
+
+          <!-- Aside column -->
+          <aside class="detail-aside">
+            <section class="summary-card" aria-label="Resumen económico">
+              <h2 class="summary-card__title">Resumen económico</h2>
+
+              <div class="summary-row">
+                <span class="summary-row__label">Subtotal</span>
+                <span class="summary-row__value">$ 184.400</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-row__label">Descuento (3%)</span>
+                <span class="summary-row__value summary-row__value--negative">− $ 5.532</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-row__label">Seña (30%)</span>
+                <span class="summary-row__value">$ 53.660</span>
+              </div>
+
+              <div class="summary-card__divider"></div>
+
+              <div class="summary-total">
+                <span class="summary-total__label">Precio final</span>
+                <span class="summary-total__value">$ 178.868</span>
+              </div>
+
+              <button type="button" class="btn btn--success btn--block">Registrar Orden de Compra</button>
+            </section>
+          </aside>
+
+        </div>
+
+      </main>
+    </div>
+  </div>
+</body>
+</html>

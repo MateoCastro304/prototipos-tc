@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotizando pieza · Procesos · Tornería Castro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+  <nav class="proto-nav" aria-label="Navegación entre prototipos">
+    <span class="proto-nav__label">Prototipos</span>
+    <div class="proto-nav__links">
+      <a class="proto-nav__link" href="P-DashBrdCotizaciones.html">P-016 Dashboard</a>
+      <a class="proto-nav__link" href="P-DetalleCotizacion.html">P-018 Detalle</a>
+      <a class="proto-nav__link" href="P-DetalleCotizacionPendiente.html">Detalle pendiente</a>
+      <a class="proto-nav__link" href="P-WizardIntro.html">P-019 Asistente inicio</a>
+      <a class="proto-nav__link" href="P-WizardDatosGenerales.html">P-020 Datos generales</a>
+      <a class="proto-nav__link" href="P-WizardPiezas.html">P-021 Piezas</a>
+      <a class="proto-nav__link" href="P-WizardAgregarPieza.html">P-022 Agregar pieza</a>
+      <a class="proto-nav__link" href="P-WizardMaterial.html">P-024 Material</a>
+      <a class="proto-nav__link" href="P-WizardSeleccionarProveedor.html">P-025 Sel. proveedor</a>
+      <a class="proto-nav__link" href="P-WizardProcesosPropios.html">P-026 Procesos</a>
+      <a class="proto-nav__link proto-nav__link--active" href="P-WizardProcesosTercerizados.html">P-027 Procesos (alt.)</a>
+      <a class="proto-nav__link" href="P-WizardSeleccionarProceso.html">P-028 Sel. proceso</a>
+      <a class="proto-nav__link" href="P-WizardTercerizacionPieza.html">P-029 Tercerización</a>
+      <a class="proto-nav__link" href="P-WizardAgregarTratamiento.html">Agregar tratamiento</a>
+      <a class="proto-nav__link" href="P-WizardCostosPieza.html">P-030 Costos pieza</a>
+      <a class="proto-nav__link" href="P-WizardDescuentos.html">P-031 Descuentos</a>
+      <a class="proto-nav__link" href="P-WizardSenia.html">P-032 Seña</a>
+      <a class="proto-nav__link" href="P-WizardResumen.html">P-033 Resumen</a>
+      <a class="proto-nav__link" href="P-WizardConfirmacion.html">P-034 Confirmación</a>
+      <a class="proto-nav__link" href="P-RegistrarSolicitud.html">Nueva solicitud</a>
+    </div>
+  </nav>
+
+  <div class="wizard">
+    <header class="wizard-header">
+      <div class="wizard-header__left">
+        <button type="button" class="wizard-header__back" aria-label="Volver">
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M10 3L4.5 8L10 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <span class="wizard-header__title">Cotizando pieza 2/3</span>
+        <span class="wizard-header__sep">·</span>
+        <span class="wizard-header__meta">EDA-119 — Eje ranurado</span>
+      </div>
+      <button type="button" class="btn btn--outline">Guardar como borrador</button>
+    </header>
+
+    <nav class="wizard-stepper" aria-label="Progreso del asistente">
+      <ol class="wizard-stepper__list">
+        <li class="wizard-stepper__step">
+          <span class="wizard-stepper__circle wizard-stepper__circle--done" aria-hidden="true">
+            <svg viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="wizard-stepper__label wizard-stepper__label--active">Datos generales</span>
+        </li>
+        <li class="wizard-stepper__line wizard-stepper__line--done" aria-hidden="true"></li>
+        <li class="wizard-stepper__step">
+          <span class="wizard-stepper__circle wizard-stepper__circle--current">2</span>
+          <span class="wizard-stepper__label wizard-stepper__label--active">Piezas</span>
+        </li>
+        <li class="wizard-stepper__line wizard-stepper__line--pending" aria-hidden="true"></li>
+        <li class="wizard-stepper__step">
+          <span class="wizard-stepper__circle wizard-stepper__circle--pending">3</span>
+          <span class="wizard-stepper__label wizard-stepper__label--pending">Descuentos</span>
+        </li>
+        <li class="wizard-stepper__line wizard-stepper__line--pending" aria-hidden="true"></li>
+        <li class="wizard-stepper__step">
+          <span class="wizard-stepper__circle wizard-stepper__circle--pending">4</span>
+          <span class="wizard-stepper__label wizard-stepper__label--pending">Seña</span>
+        </li>
+        <li class="wizard-stepper__line wizard-stepper__line--pending" aria-hidden="true"></li>
+        <li class="wizard-stepper__step">
+          <span class="wizard-stepper__circle wizard-stepper__circle--pending">5</span>
+          <span class="wizard-stepper__label wizard-stepper__label--pending">Resumen</span>
+        </li>
+        <li class="wizard-stepper__line wizard-stepper__line--pending" aria-hidden="true"></li>
+        <li class="wizard-stepper__step">
+          <span class="wizard-stepper__circle wizard-stepper__circle--pending">6</span>
+          <span class="wizard-stepper__label wizard-stepper__label--pending">Confirmación</span>
+        </li>
+      </ol>
+    </nav>
+
+    <main class="wizard-content">
+      <div class="card-stack">
+
+        <!-- Materiales -->
+        <section class="section-card section-card--muted" aria-label="Materiales">
+          <div class="section-card__header">
+            <h2 class="section-card__title">Materiales</h2>
+            <a class="btn btn--outline" href="P-WizardMaterial.html">Editar</a>
+          </div>
+
+          <div class="form-grid form-grid--3">
+            <div class="form-field">
+              <label class="form-field__label">Material (calidad)</label>
+              <input class="form-field__input" type="text" value="Acero 1045" readonly>
+            </div>
+            <div class="form-field">
+              <label class="form-field__label">Presentación</label>
+              <input class="form-field__input" type="text" value="Cilindro sólido" readonly>
+            </div>
+            <div class="form-field">
+              <label class="form-field__label">Proveedor</label>
+              <input class="form-field__input" type="text" value="Metalúrgica Sur" readonly>
+            </div>
+            <div class="form-field">
+              <label class="form-field__label">Cantidad de material</label>
+              <input class="form-field__input" type="text" value="12,5 kg" readonly>
+            </div>
+            <div class="form-field">
+              <label class="form-field__label">Precio por kg</label>
+              <input class="form-field__input" type="text" value="$ 2.480" readonly>
+            </div>
+            <div class="form-field">
+              <label class="form-field__label">Costo de material</label>
+              <input class="form-field__input form-field__input--disabled" type="text" value="$ 31.000" disabled>
+            </div>
+          </div>
+        </section>
+
+        <!-- Procesos propios -->
+        <section class="section-card" aria-label="Procesos propios">
+          <div class="section-card__header">
+            <h2 class="section-card__title">Procesos propios</h2>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="table__th">Tipo de proceso</th>
+                <th class="table__th table__th--right">Horas estim.</th>
+                <th class="table__th table__th--right">$/Hora</th>
+                <th class="table__th table__th--right">Costo</th>
+                <th class="table__th"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table__row">
+                <td class="table__td">Mecanizado Torno CNC</td>
+                <td class="table__td table__td--right table__td--mono">4,0 h</td>
+                <td class="table__td table__td--right table__td--mono">$ 2.547</td>
+                <td class="table__td table__td--right table__td--price">$ 10.188</td>
+                <td class="table__td table__td--remove">×</td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__td">Mecanizado Torno Manual</td>
+                <td class="table__td table__td--right table__td--mono">2,5 h</td>
+                <td class="table__td table__td--right table__td--mono">$ 1.557</td>
+                <td class="table__td table__td--right table__td--price">$ 3.893</td>
+                <td class="table__td table__td--remove">×</td>
+              </tr>
+              <tr class="table__add-row">
+                <td><a class="table__add-link" href="#">+ Agregar proceso</a></td>
+                <td></td>
+                <td class="table__td--right table__total-label">Total M.O.</td>
+                <td class="table__td table__td--right table__total-value">$ 14.081</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="info-note">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/><line x1="8" y1="7" x2="8" y2="11.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="4.8" r="0.9" fill="currentColor"/></svg>
+            El $/hora se propone desde el catálogo (precioHoraBase) y puede modificarse sólo para esta cotización.
+          </p>
+        </section>
+
+        <!-- Procesos tercerizados -->
+        <section class="section-card" aria-label="Procesos tercerizados">
+          <div class="section-card__header">
+            <h2 class="section-card__title">Procesos tercerizados</h2>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="table__th">Proceso</th>
+                <th class="table__th">Proveedor</th>
+                <th class="table__th table__th--right">Costo total</th>
+                <th class="table__th"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table__row">
+                <td class="table__td">Zincado</td>
+                <td class="table__td">Zincados del Sur</td>
+                <td class="table__td table__td--right table__td--price">$ 8.500</td>
+                <td class="table__td table__td--remove">×</td>
+              </tr>
+              <tr class="table__add-row">
+                <td><a class="table__add-link" href="#">+ Agregar tercerizado</a></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Tratamientos superficiales -->
+        <section class="section-card" aria-label="Tratamientos superficiales">
+          <div class="section-card__header">
+            <h2 class="section-card__title">Tratamientos superficiales</h2>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="table__th">Tipo de tratamiento</th>
+                <th class="table__th">Proveedor</th>
+                <th class="table__th table__th--right">Costo</th>
+                <th class="table__th"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table__row">
+                <td class="table__td">Pintura epoxi</td>
+                <td class="table__td">Pinturas RC</td>
+                <td class="table__td table__td--right table__td--price">$ 6.300</td>
+                <td class="table__td table__td--remove">×</td>
+              </tr>
+              <tr class="table__add-row">
+                <td><a class="table__add-link" href="P-WizardAgregarTratamiento.html">+ Agregar tratamiento</a></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="subsection">
+            <h3 class="subsection__title">Pintura (campos adicionales)</h3>
+            <div class="form-grid form-grid--3">
+              <div class="form-field">
+                <label class="form-field__label">Tipo de pintura</label>
+                <input class="form-field__input" type="text" value="Epoxi">
+              </div>
+              <div class="form-field">
+                <label class="form-field__label">Proveedor</label>
+                <select class="form-field__select">
+                  <option>Pinturas RC</option>
+                  <option>Recubrimientos del Litoral</option>
+                  <option>Pinturas Industriales SA</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label class="form-field__label">Precio /litro</label>
+                <input class="form-field__input" type="text" value="$ 4.200">
+              </div>
+              <div class="form-field">
+                <label class="form-field__label">Horas estim.</label>
+                <input class="form-field__input" type="text" value="1,5 h">
+              </div>
+              <div class="form-field">
+                <label class="form-field__label">Precio por hora (M.O.)</label>
+                <input class="form-field__input" type="text" value="$ 1.450">
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="wizard-footer">
+      <a class="btn btn--outline" href="P-WizardMaterial.html">‹ Atrás</a>
+      <span class="wizard-footer__step">Paso 2 de 6 · Piezas — Procesos</span>
+      <a class="btn btn--primary" href="P-WizardCostosPieza.html">Finalizar pieza ›</a>
+    </footer>
+  </div>
+</body>
+</html>
