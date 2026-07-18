@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nueva cotización · Resumen · Tornería Castro</title>
+  <title>Nueva cotización · Resumen y confirmación · Tornería Castro</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -30,9 +30,8 @@
           <a class="proto-nav__link" href="P-WizardTercerizacionPieza.html">P-029 Tercerización</a>
           <a class="proto-nav__link" href="P-WizardAgregarTratamiento.html">Agregar tratamiento</a>
           <a class="proto-nav__link" href="P-WizardCostosPieza.html">P-030 Costos pieza</a>
-          <a class="proto-nav__link" href="P-WizardSenia.html">P-032 Seña</a>
-          <a class="proto-nav__link proto-nav__link--active" href="P-WizardResumen.html">P-033 Resumen</a>
-          <a class="proto-nav__link" href="P-WizardConfirmacion.html">P-034 Confirmación</a>
+          <a class="proto-nav__link" href="P-WizardConjunto.html">Conjunto / ensamble</a>
+          <a class="proto-nav__link proto-nav__link--active" href="P-WizardResumen.html">P-033 Resumen y confirmación</a>
         </div>
       </details>
   </nav>
@@ -69,35 +68,17 @@
         </li>
         <li class="wizard-stepper__line wizard-stepper__line--done" aria-hidden="true"></li>
         <li class="wizard-stepper__step">
-          <span class="wizard-stepper__circle wizard-stepper__circle--done" aria-hidden="true">
-            <svg viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <span class="wizard-stepper__label wizard-stepper__label--active">Descuentos</span>
-        </li>
-        <li class="wizard-stepper__line wizard-stepper__line--done" aria-hidden="true"></li>
-        <li class="wizard-stepper__step">
-          <span class="wizard-stepper__circle wizard-stepper__circle--done" aria-hidden="true">
-            <svg viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <span class="wizard-stepper__label wizard-stepper__label--active">Seña</span>
-        </li>
-        <li class="wizard-stepper__line wizard-stepper__line--done" aria-hidden="true"></li>
-        <li class="wizard-stepper__step">
-          <span class="wizard-stepper__circle wizard-stepper__circle--current">5</span>
-          <span class="wizard-stepper__label wizard-stepper__label--active">Resumen</span>
-        </li>
-        <li class="wizard-stepper__line wizard-stepper__line--pending" aria-hidden="true"></li>
-        <li class="wizard-stepper__step">
-          <span class="wizard-stepper__circle wizard-stepper__circle--pending">6</span>
-          <span class="wizard-stepper__label wizard-stepper__label--pending">Confirmación</span>
+          <span class="wizard-stepper__circle wizard-stepper__circle--current">3</span>
+          <span class="wizard-stepper__label wizard-stepper__label--active">Resumen y confirmación</span>
         </li>
       </ol>
     </nav>
 
     <main class="wizard-content">
-      <section class="section-card" aria-label="Resumen de la cotización">
-        <h2 class="section-card__title">Resumen de la cotización</h2>
-        <div class="detail-layout">
+      <div class="card-stack">
+
+        <section class="section-card" aria-label="Resumen de la cotización">
+          <h2 class="section-card__title">Resumen de la cotización</h2>
           <div class="table-card__scroll">
             <table class="table">
               <thead>
@@ -111,8 +92,56 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="table__row">
+                <tr class="table__row table__row--group">
                   <td class="table__td table__td--muted">1</td>
+                  <td class="table__td table__td--code">EDA-120</td>
+                  <td class="table__td">Reductor de velocidad <span class="badge badge--conjunto">Conjunto</span></td>
+                  <td class="table__td table__td--right">1</td>
+                  <td class="table__td table__td--right table__td--mono">$ 78.000</td>
+                  <td class="table__td table__td--right table__td--price">$ 78.000</td>
+                </tr>
+                <tr class="table__row table__row--sub">
+                  <td class="table__td"></td>
+                  <td class="table__td table__td--code table__td--code-muted">EDA-120-1</td>
+                  <td class="table__td"><span class="table__tag">Componente</span>Eje piñón</td>
+                  <td class="table__td table__td--right">1</td>
+                  <td class="table__td table__td--right table__td--mono">$ 28.400</td>
+                  <td class="table__td table__td--right table__td--mono">$ 28.400</td>
+                </tr>
+                <tr class="table__row table__row--sub">
+                  <td class="table__td"></td>
+                  <td class="table__td table__td--code table__td--code-muted">EDA-120-2</td>
+                  <td class="table__td"><span class="table__tag">Componente</span>Carcasa</td>
+                  <td class="table__td table__td--right">1</td>
+                  <td class="table__td table__td--right table__td--mono">$ 19.800</td>
+                  <td class="table__td table__td--right table__td--mono">$ 19.800</td>
+                </tr>
+                <tr class="table__row table__row--sub">
+                  <td class="table__td"></td>
+                  <td class="table__td table__td--code table__td--code-muted">EDA-120-3</td>
+                  <td class="table__td"><span class="table__tag">Componente</span>Corona dentada</td>
+                  <td class="table__td table__td--right">1</td>
+                  <td class="table__td table__td--right table__td--mono">$ 15.650</td>
+                  <td class="table__td table__td--right table__td--mono">$ 15.650</td>
+                </tr>
+                <tr class="table__row table__row--sub">
+                  <td class="table__td"></td>
+                  <td class="table__td table__td--muted">—</td>
+                  <td class="table__td"><span class="table__tag">Repuesto</span>Retén 35x50x8</td>
+                  <td class="table__td table__td--right">1</td>
+                  <td class="table__td table__td--right table__td--mono">$ 1.900</td>
+                  <td class="table__td table__td--right table__td--mono">$ 1.900</td>
+                </tr>
+                <tr class="table__row table__row--sub">
+                  <td class="table__td"></td>
+                  <td class="table__td table__td--muted">—</td>
+                  <td class="table__td"><span class="table__tag">Repuesto</span>Tornillería de montaje (juego)</td>
+                  <td class="table__td table__td--right">1</td>
+                  <td class="table__td table__td--right table__td--mono">$ 2.400</td>
+                  <td class="table__td table__td--right table__td--mono">$ 2.400</td>
+                </tr>
+                <tr class="table__row">
+                  <td class="table__td table__td--muted">2</td>
                   <td class="table__td table__td--code">EDA-118</td>
                   <td class="table__td">Buje de bronce Ø40</td>
                   <td class="table__td table__td--right">8</td>
@@ -120,7 +149,7 @@
                   <td class="table__td table__td--right table__td--price">$ 98.400</td>
                 </tr>
                 <tr class="table__row">
-                  <td class="table__td table__td--muted">2</td>
+                  <td class="table__td table__td--muted">3</td>
                   <td class="table__td table__td--code">EDA-119</td>
                   <td class="table__td">Eje ranurado</td>
                   <td class="table__td table__td--right">1</td>
@@ -128,7 +157,7 @@
                   <td class="table__td table__td--right table__td--price">$ 61.000</td>
                 </tr>
                 <tr class="table__row">
-                  <td class="table__td table__td--muted">3</td>
+                  <td class="table__td table__td--muted">4</td>
                   <td class="table__td table__td--code table__td--code-muted">OC-004</td>
                   <td class="table__td">Tapa (reparación)</td>
                   <td class="table__td table__td--right">1</td>
@@ -138,34 +167,51 @@
               </tbody>
             </table>
           </div>
+        </section>
 
-          <aside class="summary-card summary-card--plain">
+        <div class="confirm-layout">
+          <aside class="summary-card summary-card--plain" aria-label="Precio final">
             <p class="summary-card__meta">EDASA · ARS · Dólar $1.180 · Validez 7 días (vto. 18/07)</p>
             <div class="summary-row">
               <span class="summary-row__label">Subtotal</span>
-              <span class="summary-row__value">$ 184.400</span>
+              <span class="summary-row__value">$ 262.400</span>
             </div>
             <div class="summary-row">
               <span class="summary-row__label">Descuento 3%</span>
-              <span class="summary-row__value summary-row__value--negative">− $ 5.532</span>
+              <span class="summary-row__value summary-row__value--negative">− $ 7.872</span>
             </div>
             <div class="summary-total">
               <span class="summary-total__label">Precio final</span>
-              <span class="summary-total__value">$ 178.868</span>
+              <span class="summary-total__value">$ 254.528</span>
             </div>
             <div class="summary-row">
               <span class="summary-row__label">Seña 30%</span>
-              <span class="summary-row__value">$ 53.660</span>
+              <span class="summary-row__value">$ 76.358</span>
+            </div>
+            <div class="summary-card__divider"></div>
+            <div class="summary-card__actions">
+              <button type="button" class="btn btn--outline">Aplicar descuento</button>
+              <button type="button" class="btn btn--outline">Aplicar seña</button>
             </div>
           </aside>
+
+          <section class="confirm-card" aria-label="Confirmación de cotización">
+            <span class="confirm-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 20" fill="none"><path d="M2 10L9 17L22 2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h2 class="confirm-card__title">Cotización lista para generar</h2>
+            <p class="confirm-card__desc">Al confirmar, la cotización <strong>COT-2456</strong> pasará a estado <strong>Cotizado</strong> y comenzará su período de validez (7 días).</p>
+            <button type="button" class="btn btn--success confirm-card__cta">Confirmar y generar cotización</button>
+          </section>
         </div>
-      </section>
+
+      </div>
     </main>
 
     <footer class="wizard-footer">
-      <button type="button" class="btn btn--outline">‹ Atrás</button>
-      <span class="wizard-footer__step">Paso 5 de 6 · Resumen</span>
-      <button type="button" class="btn btn--primary">Confirmar ›</button>
+      <a class="btn btn--outline" href="P-WizardPiezas.html">‹ Atrás</a>
+      <span class="wizard-footer__step">Paso 3 de 3 · Resumen y confirmación</span>
+      <span></span>
     </footer>
   </div>
 </body>

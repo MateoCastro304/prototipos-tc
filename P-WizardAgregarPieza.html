@@ -30,9 +30,8 @@
           <a class="proto-nav__link" href="P-WizardTercerizacionPieza.html">P-029 Tercerización</a>
           <a class="proto-nav__link" href="P-WizardAgregarTratamiento.html">Agregar tratamiento</a>
           <a class="proto-nav__link" href="P-WizardCostosPieza.html">P-030 Costos pieza</a>
-          <a class="proto-nav__link" href="P-WizardSenia.html">P-032 Seña</a>
-          <a class="proto-nav__link" href="P-WizardResumen.html">P-033 Resumen</a>
-          <a class="proto-nav__link" href="P-WizardConfirmacion.html">P-034 Confirmación</a>
+          <a class="proto-nav__link" href="P-WizardConjunto.html">Conjunto / ensamble</a>
+          <a class="proto-nav__link" href="P-WizardResumen.html">P-033 Resumen y confirmación</a>
         </div>
       </details>
   </nav>
@@ -45,56 +44,83 @@
     <div class="modal-scrim">
       <div class="modal modal--lg">
         <div class="modal__header">
-          <h2 class="modal__title">Agregar pieza a la cotización</h2>
+          <h2 class="modal__title">Agregar ítem a la cotización</h2>
           <a class="modal__close" href="P-WizardPiezas.html" aria-label="Cerrar">×</a>
         </div>
         <div class="modal__body">
-          <div class="search-bar">
-            <label class="search-bar__input">
-              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.5"/>
-                <line x1="13.5" y1="13.5" x2="18" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-              <input type="text" placeholder="Buscar pieza por N° de plano...">
-            </label>
-            <button type="button" class="btn btn--primary">Buscar</button>
+          <div class="form-field">
+            <label class="form-field__label">Tipo de ítem *</label>
+            <div class="segmented">
+              <span class="segmented__option segmented__option--active">Pieza</span>
+              <span class="segmented__option">Conjunto</span>
+              <span class="segmented__option">Reparación</span>
+            </div>
+            <span class="form-field__hint">Conjunto: agrupa varios componentes, cada uno con su propio material y procesos, más los procesos y repuestos que se aplican una vez ensamblado.</span>
           </div>
 
-          <table class="pick-table">
-            <thead>
-              <tr>
-                <th>Plano</th>
-                <th>Descripción</th>
-                <th>Últ. cotiz.</th>
-                <th>Adjud.</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="pick-table__row--selected">
-                <td class="pick-table__code">EDA-118</td>
-                <td>Buje de bronce Ø40</td>
-                <td class="pick-table__muted">04/2025</td>
-                <td><span class="badge badge--si">Sí</span></td>
-              </tr>
-              <tr>
-                <td class="pick-table__code">EDA-118R</td>
-                <td>Buje de bronce — reparación</td>
-                <td class="pick-table__muted">02/2025</td>
-                <td><span class="badge badge--si">Sí</span></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="form-field">
+            <label class="form-field__label">Archivo adjunto asociado (plano) *</label>
+            <span class="form-field__hint">Elegí, entre los archivos cargados en la solicitud, el que corresponde a este ítem.</span>
+            <table class="pick-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Archivo</th>
+                  <th>Tipo de archivo</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="pick-table__row--selected">
+                  <td><input type="radio" name="archivo-adjunto" checked aria-label="Seleccionar EDA-118.pdf"></td>
+                  <td class="pick-table__code">EDA-118.pdf</td>
+                  <td>Plano</td>
+                  <td><a class="table__action" href="#" title="Ver EDA-118.pdf">Ver</a></td>
+                </tr>
+                <tr>
+                  <td><input type="radio" name="archivo-adjunto" aria-label="Seleccionar EDA-119.dwg"></td>
+                  <td class="pick-table__code">EDA-119.dwg</td>
+                  <td>Plano</td>
+                  <td><a class="table__action" href="#" title="Ver EDA-119.dwg">Ver</a></td>
+                </tr>
+                <tr>
+                  <td><input type="radio" name="archivo-adjunto" aria-label="Seleccionar EDA-118.stp"></td>
+                  <td class="pick-table__code">EDA-118.stp</td>
+                  <td>Archivo .step</td>
+                  <td><a class="table__action" href="#" title="Ver EDA-118.stp">Ver</a></td>
+                </tr>
+                <tr>
+                  <td><input type="radio" name="archivo-adjunto" aria-label="Seleccionar EDA-118_pieza-patron.jpg"></td>
+                  <td class="pick-table__code">EDA-118_pieza-patron.jpg</td>
+                  <td>Foto de pieza patrón</td>
+                  <td><a class="table__action" href="#" title="Ver EDA-118_pieza-patron.jpg">Ver</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-          <div class="callout">
-            <span><strong>Esta pieza tiene antecedentes.</strong> Podés iniciar la cotización a partir de una anterior (CU17).</span>
-            <button type="button" class="btn btn--primary">Usar como base</button>
+          <div class="form-field">
+            <label class="form-field__label">N° de plano *</label>
+            <input class="form-field__input" type="text" placeholder="Ej: EDA-118">
+            <span class="form-field__hint">Se registra junto al ítem para trazabilidad de qué plano se usó al cotizar.</span>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-field form-field--full">
+              <label class="form-field__label">Descripción del ítem *</label>
+              <textarea class="form-field__textarea" placeholder="Ej: Eje ranurado para equipo de bombeo"></textarea>
+            </div>
+            <div class="form-field">
+              <label class="form-field__label">Cantidad *</label>
+              <input class="form-field__input" type="text" placeholder="Ej: 1">
+            </div>
           </div>
         </div>
         <div class="modal__footer">
-          <a class="btn btn--outline" href="P-WizardProcesosPropios.html">+ Pieza nueva (sin plano)</a>
+          <button type="button" class="btn btn--outline">Buscar historial</button>
           <div class="form-field__row">
             <a class="modal__cancel" href="P-WizardPiezas.html">Cancelar</a>
-            <a class="btn btn--primary" href="P-WizardProcesosPropios.html">Seleccionar pieza</a>
+            <a class="btn btn--primary" href="P-WizardProcesosPropios.html">Iniciar cotización ›</a>
           </div>
         </div>
       </div>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotizando conjunto · Tornería Castro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+  <nav class="proto-nav" aria-label="Navegación entre prototipos">
+    <span class="proto-nav__label">Prototipos</span>
+    <div class="proto-nav__links">
+      <a class="proto-nav__link" href="P-DashBrdCotizaciones.html">P-016 Dashboard</a>
+      <a class="proto-nav__link" href="P-DetalleCotizacion.html">P-018 Detalle</a>
+      <a class="proto-nav__link" href="P-DetalleCotizacionPendiente.html">Detalle pendiente</a>
+      <a class="proto-nav__link" href="P-RegistrarSolicitud.html">Nueva solicitud</a>
+    </div>
+    <details class="proto-nav__dropdown" open>
+        <summary class="proto-nav__dropdown-summary proto-nav__dropdown-summary--active">Asistente de cotización (pasos) &#9662;</summary>
+        <div class="proto-nav__dropdown-menu">
+          <a class="proto-nav__link" href="P-WizardDatosGenerales.html">P-020 Datos generales</a>
+          <a class="proto-nav__link" href="P-WizardPiezas.html">P-021 Piezas</a>
+          <a class="proto-nav__link" href="P-WizardAgregarPieza.html">P-022 Agregar pieza</a>
+          <a class="proto-nav__link" href="P-WizardSeleccionarProveedor.html">P-025 Sel. proveedor</a>
+          <a class="proto-nav__link" href="P-WizardProcesosPropios.html">P-026 Procesos</a>
+          <a class="proto-nav__link" href="P-WizardSeleccionarProceso.html">P-028 Sel. proceso</a>
+          <a class="proto-nav__link" href="P-WizardTercerizacionPieza.html">P-029 Tercerización</a>
+          <a class="proto-nav__link" href="P-WizardAgregarTratamiento.html">Agregar tratamiento</a>
+          <a class="proto-nav__link" href="P-WizardCostosPieza.html">P-030 Costos pieza</a>
+          <a class="proto-nav__link proto-nav__link--active" href="P-WizardConjunto.html">Conjunto / ensamble</a>
+          <a class="proto-nav__link" href="P-WizardResumen.html">P-033 Resumen y confirmación</a>
+        </div>
+      </details>
+  </nav>
+
+  <div class="wizard">
+    <header class="wizard-header">
+      <div class="wizard-header__left">
+        <button type="button" class="wizard-header__back" aria-label="Volver">
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M10 3L4.5 8L10 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <span class="wizard-header__title">Cotizando conjunto</span>
+        <span class="wizard-header__sep">·</span>
+        <span class="wizard-header__meta">EDA-120 — Reductor de velocidad</span>
+      </div>
+      <button type="button" class="btn btn--outline">Guardar como borrador</button>
+    </header>
+
+    <nav class="wizard-stepper" aria-label="Progreso del asistente">
+      <ol class="wizard-stepper__list">
+        <li class="wizard-stepper__step">
+          <span class="wizard-stepper__circle wizard-stepper__circle--done" aria-hidden="true">
+            <svg viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="wizard-stepper__label wizard-stepper__label--active">Datos generales</span>
+        </li>
+        <li class="wizard-stepper__line wizard-stepper__line--done" aria-hidden="true"></li>
+        <li class="wizard-stepper__step">
+          <span class="wizard-stepper__circle wizard-stepper__circle--current">2</span>
+          <span class="wizard-stepper__label wizard-stepper__label--active">Piezas</span>
+        </li>
+        <li class="wizard-stepper__line wizard-stepper__line--pending" aria-hidden="true"></li>
+        <li class="wizard-stepper__step">
+          <span class="wizard-stepper__circle wizard-stepper__circle--pending">3</span>
+          <span class="wizard-stepper__label wizard-stepper__label--pending">Resumen y confirmación</span>
+        </li>
+      </ol>
+    </nav>
+
+    <main class="wizard-content">
+      <div class="plano-chip">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 1.5h6L12 4.5v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-11a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        Plano enlazado a este ítem: <strong>EDA-120.dwg</strong> <span class="badge badge--conjunto">Conjunto</span>
+        <a class="plano-chip__link" href="#">Ver plano</a>
+      </div>
+
+      <div class="card-stack">
+
+        <!-- Componentes del conjunto -->
+        <section class="section-card" aria-label="Componentes del conjunto">
+          <div class="section-card__header">
+            <h2 class="section-card__title">Componentes del conjunto (3)</h2>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="table__th">Componente</th>
+                <th class="table__th">Plano</th>
+                <th class="table__th">Material</th>
+                <th class="table__th table__th--right">Costo (mat. + M.O. + tercerizado + repuestos)</th>
+                <th class="table__th"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table__row">
+                <td class="table__td">Eje piñón</td>
+                <td class="table__td">
+                  <span class="table__td--code">EDA-120-1</span>
+                  <a class="table__action" href="#" title="Ver plano EDA-120-1">Ver plano</a>
+                </td>
+                <td class="table__td">Acero 4140</td>
+                <td class="table__td table__td--right table__td--price">$ 28.400</td>
+                <td class="table__td table__td--actions">
+                  <a class="table__action" href="P-WizardProcesosPropios.html">Editar</a>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__td">Carcasa</td>
+                <td class="table__td">
+                  <span class="table__td--code">EDA-120-2</span>
+                  <a class="table__action" href="#" title="Ver plano EDA-120-2">Ver plano</a>
+                </td>
+                <td class="table__td">Fundición gris</td>
+                <td class="table__td table__td--right table__td--price">$ 19.800</td>
+                <td class="table__td table__td--actions">
+                  <a class="table__action" href="P-WizardProcesosPropios.html">Editar</a>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__td">Corona dentada</td>
+                <td class="table__td">
+                  <span class="table__td--code">EDA-120-3</span>
+                  <a class="table__action" href="#" title="Ver plano EDA-120-3">Ver plano</a>
+                </td>
+                <td class="table__td">Bronce SAE 40</td>
+                <td class="table__td table__td--right table__td--price">$ 15.650</td>
+                <td class="table__td table__td--actions">
+                  <a class="table__action" href="P-WizardProcesosPropios.html">Editar</a>
+                </td>
+              </tr>
+              <tr class="table__add-row">
+                <td><a class="table__add-link" href="#">+ Agregar componente</a></td>
+                <td></td>
+                <td class="table__td--right table__total-label">Total componentes</td>
+                <td class="table__td table__td--right table__total-value">$ 63.850</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="info-note">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/><line x1="8" y1="7" x2="8" y2="11.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="4.8" r="0.9" fill="currentColor"/></svg>
+            Cada componente se cotiza como una pieza individual (material, procesos propios, tercerizados y repuestos), con su propio plano enlazado.
+          </p>
+        </section>
+
+        <!-- Procesos del conjunto -->
+        <section class="section-card" aria-label="Procesos del conjunto">
+          <div class="section-card__header">
+            <h2 class="section-card__title">Procesos del conjunto</h2>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="table__th">Proceso (post-ensamble)</th>
+                <th class="table__th">Proveedor / Recurso</th>
+                <th class="table__th table__th--right">Horas / Costo</th>
+                <th class="table__th table__th--right">Costo total</th>
+                <th class="table__th"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table__row">
+                <td class="table__td">Ensamblaje final</td>
+                <td class="table__td">Taller propio</td>
+                <td class="table__td table__td--right table__td--mono">1,5 h × $2.547</td>
+                <td class="table__td table__td--right table__td--price">$ 3.821</td>
+                <td class="table__td table__td--remove">×</td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__td">Pintura general</td>
+                <td class="table__td">Pinturas RC</td>
+                <td class="table__td table__td--right table__td--mono">—</td>
+                <td class="table__td table__td--right table__td--price">$ 4.500</td>
+                <td class="table__td table__td--remove">×</td>
+              </tr>
+              <tr class="table__add-row">
+                <td><a class="table__add-link" href="#">+ Agregar proceso del conjunto</a></td>
+                <td></td>
+                <td class="table__td--right table__total-label">Total procesos</td>
+                <td class="table__td table__td--right table__total-value">$ 8.321</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="info-note">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/><line x1="8" y1="7" x2="8" y2="11.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="4.8" r="0.9" fill="currentColor"/></svg>
+            Se aplican una vez ensambladas las piezas: pintura, tratamientos superficiales o ensamblaje final, entre otros.
+          </p>
+        </section>
+
+        <!-- Repuestos del conjunto -->
+        <section class="section-card" aria-label="Repuestos del conjunto">
+          <div class="section-card__header">
+            <h2 class="section-card__title">Repuestos del conjunto</h2>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="table__th">Repuesto</th>
+                <th class="table__th">Proveedor</th>
+                <th class="table__th table__th--right">Cant.</th>
+                <th class="table__th table__th--right">Precio unit.</th>
+                <th class="table__th table__th--right">Costo total</th>
+                <th class="table__th"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table__row">
+                <td class="table__td">Retén 35x50x8</td>
+                <td class="table__td">Rodamientos del Plata</td>
+                <td class="table__td table__td--right table__td--mono">1</td>
+                <td class="table__td table__td--right table__td--mono">$ 1.900</td>
+                <td class="table__td table__td--right table__td--price">$ 1.900</td>
+                <td class="table__td table__td--remove">×</td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__td">Tornillería de montaje (juego)</td>
+                <td class="table__td">Ferretería Industrial SRL</td>
+                <td class="table__td table__td--right table__td--mono">1</td>
+                <td class="table__td table__td--right table__td--mono">$ 2.400</td>
+                <td class="table__td table__td--right table__td--price">$ 2.400</td>
+                <td class="table__td table__td--remove">×</td>
+              </tr>
+              <tr class="table__add-row">
+                <td><a class="table__add-link" href="#">+ Agregar repuesto</a></td>
+                <td></td>
+                <td></td>
+                <td class="table__td--right table__total-label">Total repuestos</td>
+                <td class="table__td table__td--right table__total-value">$ 4.300</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="info-note">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/><line x1="8" y1="7" x2="8" y2="11.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="4.8" r="0.9" fill="currentColor"/></svg>
+            Repuestos necesarios para el conjunto en su totalidad (no asociados a un componente en particular), comprados a proveedores externos.
+          </p>
+        </section>
+
+        <!-- Costos y precio del conjunto -->
+        <section class="form-card" aria-label="Costos y precio unitario del conjunto">
+          <h2 class="form-card__title">Costos y precio unitario del conjunto</h2>
+          <div class="cost-list">
+            <div class="cost-list__row">
+              <span class="cost-list__label">Componentes (3)
+                <span class="cost-list__sublabel">Eje piñón + Carcasa + Corona dentada</span>
+              </span>
+              <span class="cost-list__value">$ 63.850</span>
+            </div>
+            <div class="cost-list__row">
+              <span class="cost-list__label">Procesos del conjunto
+                <span class="cost-list__sublabel">Ensamblaje final + pintura general</span>
+              </span>
+              <span class="cost-list__value">$ 8.321</span>
+            </div>
+            <div class="cost-list__row">
+              <span class="cost-list__label">Repuestos del conjunto
+                <span class="cost-list__sublabel">Retén + tornillería de montaje</span>
+              </span>
+              <span class="cost-list__value">$ 4.300</span>
+            </div>
+            <div class="cost-list__row">
+              <span class="cost-list__label">Subtotal (costo)</span>
+              <span class="cost-list__value">$ 76.471</span>
+            </div>
+            <div class="cost-list__row cost-list__row--highlight">
+              <span class="cost-list__label">Precio unitario del conjunto</span>
+              <span class="cost-list__value">$ 78.000</span>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="wizard-footer">
+      <a class="btn btn--outline" href="P-WizardPiezas.html">‹ Volver a piezas</a>
+      <span class="wizard-footer__step">Paso 2 de 3 · Piezas — Conjunto</span>
+      <a class="btn btn--primary" href="P-WizardPiezas.html">Finalizar conjunto ›</a>
+    </footer>
+  </div>
+</body>
+</html>
