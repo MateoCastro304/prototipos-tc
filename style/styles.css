@@ -2893,6 +2893,45 @@ table {
   color: var(--color-accent-green);
 }
 
+/* --- Deviation card (desvío global, dark) --- */
+.deviation-card {
+  background: var(--color-sidebar-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.deviation-card__label {
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-sidebar-text-muted);
+}
+
+.deviation-card__value {
+  margin-top: var(--space-2);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-extrabold);
+  color: var(--color-sidebar-text);
+}
+
+.deviation-card__hint {
+  margin-top: var(--space-2);
+  font-size: var(--fs-xs);
+  color: var(--color-sidebar-text-muted);
+}
+
+.callout--neutral {
+  justify-content: flex-start;
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-card);
+}
+
+.callout--neutral .callout__icon {
+  color: var(--color-text-muted);
+}
+
 /* --- Vista previa de impresión (hoja de ruta A4) --- */
 .print-preview {
   min-height: calc(100vh - var(--topbar-height));

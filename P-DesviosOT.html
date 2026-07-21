@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OT-1033 · Hoja de ruta · Tornería Castro</title>
+  <title>OT-1033 · Desvíos · Tornería Castro</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -28,11 +28,11 @@
         <div class="proto-nav__dropdown-menu">
           <a class="proto-nav__link" href="P-DashBrdOrdenesTrabajo.html">Dashboard OT</a>
           <a class="proto-nav__link" href="P-DetalleOTCompra.html">P-049 Detalle OT (compra)</a>
-          <a class="proto-nav__link proto-nav__link--active" href="P-DetalleOTHojaRuta.html">P-053 Hoja de ruta</a>
+          <a class="proto-nav__link" href="P-DetalleOTHojaRuta.html">P-053 Hoja de ruta</a>
           <a class="proto-nav__link" href="P-ModificarHojaRuta.html">P-054 Modificar hoja de ruta</a>
           <a class="proto-nav__link" href="P-ImprimirHojaRuta.html">P-055 Imprimir hoja de ruta</a>
           <a class="proto-nav__link" href="P-DetalleOTEjecucion.html">P-058 Ejecución OT</a>
-          <a class="proto-nav__link" href="P-DesviosOT.html">P-061 Desvíos OT</a>
+          <a class="proto-nav__link proto-nav__link--active" href="P-DesviosOT.html">P-061 Desvíos OT</a>
         </div>
       </details>
       <details class="proto-nav__dropdown">
@@ -101,7 +101,7 @@
           <span class="topbar__breadcrumb-sep">/</span>
           <span class="topbar__breadcrumb-item">OT-1033</span>
           <span class="topbar__breadcrumb-sep">/</span>
-          <span class="topbar__breadcrumb-item topbar__breadcrumb-item--current">Hoja de ruta</span>
+          <span class="topbar__breadcrumb-item topbar__breadcrumb-item--current">Desvíos</span>
         </nav>
 
         <div class="topbar__search">
@@ -119,77 +119,94 @@
         <!-- Detail header -->
         <div class="detail-header">
           <div class="detail-header__left">
-            <a class="detail-header__back" href="P-DashBrdOrdenesTrabajo.html" aria-label="Volver">
-              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M10 3L4.5 8L10 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
             <div class="detail-header__title-row">
-              <h1 class="detail-header__title">Hoja de ruta · OT-1033 — Eje ranurado (EDA-119)</h1>
+              <h1 class="detail-header__title">Desvíos de la OT-1033</h1>
             </div>
+          </div>
+          <div class="detail-header__actions">
+            <span class="badge badge--adjudicado">Lista para finalizar</span>
           </div>
         </div>
 
-        <!-- Hoja de ruta -->
-        <section class="table-card" aria-label="Hoja de ruta">
-          <div class="table-card__scroll">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th class="table__th">Orden</th>
-                  <th class="table__th">Proceso</th>
-                  <th class="table__th">Tipo</th>
-                  <th class="table__th">H. estim.</th>
-                  <th class="table__th">Responsable</th>
-                  <th class="table__th">Observaciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="table__row">
-                  <td class="table__td table__td--muted">1</td>
-                  <td class="table__td">Corte de material</td>
-                  <td class="table__td">Propio</td>
-                  <td class="table__td">1,8 h</td>
-                  <td class="table__td table__td--muted">— vacío</td>
-                  <td class="table__td table__td--muted">— vacío</td>
-                </tr>
-                <tr class="table__row">
-                  <td class="table__td table__td--muted">2</td>
-                  <td class="table__td">Mecanizado Torno CNC</td>
-                  <td class="table__td">Propio</td>
-                  <td class="table__td">4,8 h</td>
-                  <td class="table__td table__td--muted">— vacío</td>
-                  <td class="table__td table__td--muted">— vacío</td>
-                </tr>
-                <tr class="table__row">
-                  <td class="table__td table__td--muted">3</td>
-                  <td class="table__td">Torno manual</td>
-                  <td class="table__td">Propio</td>
-                  <td class="table__td">2,5 h</td>
-                  <td class="table__td table__td--muted">— vacío</td>
-                  <td class="table__td table__td--muted">— vacío</td>
-                </tr>
-                <tr class="table__row">
-                  <td class="table__td table__td--muted">4</td>
-                  <td class="table__td">Zincado</td>
-                  <td class="table__td">Tercerizado · Zincados del Sur</td>
-                  <td class="table__td table__td--muted">— vacío</td>
-                  <td class="table__td table__td--muted">— vacío</td>
-                  <td class="table__td table__td--muted">— vacío</td>
-                </tr>
-              </tbody>
-            </table>
+        <!-- Detail layout -->
+        <div class="detail-layout">
+
+          <!-- Main column -->
+          <div class="detail-main">
+            <section class="piece-card" aria-label="Desvíos de horas y material">
+              <div class="piece-card__header">
+                <h2 class="piece-card__title">Desvío por proceso (horas)</h2>
+              </div>
+              <div class="table-card__scroll">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="table__th">Proceso</th>
+                      <th class="table__th table__th--right">Estim.</th>
+                      <th class="table__th table__th--right">Real</th>
+                      <th class="table__th table__th--right">Desvío</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="table__row">
+                      <td class="table__td">Corte</td>
+                      <td class="table__td table__td--right table__td--mono">1,0</td>
+                      <td class="table__td table__td--right table__td--mono">1,2</td>
+                      <td class="table__td table__td--right"><span class="diff-value diff-value--over">+0,2 h</span></td>
+                    </tr>
+                    <tr class="table__row">
+                      <td class="table__td">Mecanizado CNC</td>
+                      <td class="table__td table__td--right table__td--mono">4,0</td>
+                      <td class="table__td table__td--right table__td--mono">4,5</td>
+                      <td class="table__td table__td--right"><span class="diff-value diff-value--over">+0,5 h</span></td>
+                    </tr>
+                    <tr class="table__row">
+                      <td class="table__td">Torno manual</td>
+                      <td class="table__td table__td--right table__td--mono">2,5</td>
+                      <td class="table__td table__td--right table__td--mono">2,2</td>
+                      <td class="table__td table__td--right"><span class="diff-value diff-value--under">−0,3 h</span></td>
+                    </tr>
+                    <tr class="table__row table__row--group">
+                      <td class="table__td">Total horas</td>
+                      <td class="table__td table__td--right table__td--mono">7,5</td>
+                      <td class="table__td table__td--right table__td--mono">7,9</td>
+                      <td class="table__td table__td--right"><span class="diff-value diff-value--over">+0,4 h</span></td>
+                    </tr>
+                    <tr class="table__row table__row--group">
+                      <td class="table__td" colspan="4">Desvío de material</td>
+                    </tr>
+                    <tr class="table__row">
+                      <td class="table__td">Acero 1045</td>
+                      <td class="table__td table__td--right table__td--mono">12,5</td>
+                      <td class="table__td table__td--right table__td--mono">12,9</td>
+                      <td class="table__td table__td--right"><span class="diff-value diff-value--over">+0,4 kg</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
           </div>
-        </section>
 
-        <p class="info-note">
-          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/><line x1="8" y1="7" x2="8" y2="11.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="4.8" r="0.9" fill="currentColor"/></svg>
-          Responsable, tiempo y observaciones se completan al finalizar (CU30). Modificar la hoja no altera el precio pactado.
-        </p>
+          <!-- Aside column -->
+          <aside class="detail-aside">
+            <div class="deviation-card" aria-label="Desvío global de horas">
+              <p class="deviation-card__label">Desvío global de horas</p>
+              <p class="deviation-card__value">+5,3%</p>
+              <p class="deviation-card__hint">7,9 h reales vs. 7,5 h planificadas</p>
+            </div>
 
-        <div class="form-actions">
-          <a class="btn btn--outline" href="P-ModificarHojaRuta.html">Editar</a>
-          <a class="btn btn--success" href="P-ImprimirHojaRuta.html">Generar e imprimir ›</a>
+            <div class="callout callout--neutral">
+              <svg class="callout__icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/>
+                <line x1="8" y1="7" x2="8" y2="11.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                <circle cx="8" cy="4.8" r="0.9" fill="currentColor"/>
+              </svg>
+              <span>El costo real y el margen son visibles sólo para gestión (Encargado de Cotización). El taller ve desvío en horas y material.</span>
+            </div>
+
+            <a class="btn btn--success btn--block" href="P-DashBrdOrdenesTrabajo.html">✓ Finalizar OT</a>
+          </aside>
+
         </div>
 
       </main>
