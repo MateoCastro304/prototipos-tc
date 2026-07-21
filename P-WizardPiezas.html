@@ -44,7 +44,7 @@
           <a class="proto-nav__link" href="P-WizardSeleccionarProveedor.html">P-025 Sel. proveedor</a>
           <a class="proto-nav__link" href="P-WizardProcesosPropios.html">P-026 Procesos</a>
           <a class="proto-nav__link" href="P-WizardSeleccionarProceso.html">P-028 Sel. proceso</a>
-          <a class="proto-nav__link" href="P-WizardTercerizacionPieza.html">P-029 Tercerización</a>
+          <a class="proto-nav__link" href="P-WizardAgregarRepuesto.html">Agregar repuesto</a>
           <a class="proto-nav__link" href="P-WizardAgregarTratamiento.html">Agregar tratamiento</a>
           <a class="proto-nav__link" href="P-WizardCostosPieza.html">P-030 Costos pieza</a>
           <a class="proto-nav__link" href="P-WizardConjunto.html">Conjunto / ensamble</a>
@@ -183,13 +183,24 @@
         <!-- Piezas de la cotización -->
         <section class="section-card" aria-label="Piezas de la cotización">
           <div class="section-card__header">
-            <h2 class="section-card__title">Piezas de la cotización (0)</h2>
+            <h2 class="section-card__title">Piezas de la cotización (1)</h2>
             <a class="btn btn--primary" href="P-WizardAgregarPieza.html">+ Agregar pieza</a>
           </div>
 
-          <div class="empty-state">
-            <p class="empty-state__text">Todavía no agregaste ningún ítem para cotizar. Usá "Agregar pieza" para elegir el tipo de ítem (Pieza, Conjunto o Reparación) y asociarlo a uno de los archivos de la solicitud.</p>
-          </div>
+          <article class="piece-card" aria-label="Detalle de pieza agregada">
+            <div class="piece-card__header">
+              <div class="piece-summary">
+                <div class="piece-summary__main">
+                  <h3 class="piece-card__title">EDA-119 · Eje ranurado</h3>
+                  <p class="piece-summary__meta">Pieza · Acero 1045 · Cantidad 2 · EDA-119.dwg</p>
+                </div>
+                <div class="piece-summary__actions">
+                  <span class="piece-summary__price">$ 67.500</span>
+                  <a class="btn btn--outline" href="P-WizardProcesosPropios.html">Editar</a>
+                </div>
+              </div>
+            </div>
+          </article>
         </section>
 
       </div>
@@ -198,7 +209,7 @@
     <footer class="wizard-footer">
       <a class="btn btn--outline" href="P-WizardDatosGenerales.html">‹ Atrás</a>
       <span class="wizard-footer__step">Paso 2 de 3 · Piezas</span>
-      <a class="btn btn--primary" href="P-WizardResumen.html">Siguiente ›</a>
+      <a class="btn btn--primary" href="P-WizardResumen.html">Finalizar Cotización ›</a>
     </footer>
   </div>
 </body>
