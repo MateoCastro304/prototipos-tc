@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modificar hoja de ruta · OT-1033 · Tornería Castro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+  <nav class="proto-nav" aria-label="Navegación entre prototipos">
+    <span class="proto-nav__label">Prototipos</span>
+    <div class="proto-nav__groups">
+      <details class="proto-nav__dropdown">
+        <summary class="proto-nav__dropdown-summary">Cotizaciones &#9662;</summary>
+        <div class="proto-nav__dropdown-menu">
+          <a class="proto-nav__link" href="P-DashBrdCotizaciones.html">P-016 Dashboard</a>
+          <a class="proto-nav__link" href="P-DetalleCotizacion.html">P-018 Detalle</a>
+          <a class="proto-nav__link" href="P-DetalleCotizacionPendiente.html">Detalle pendiente</a>
+          <a class="proto-nav__link" href="P-RegistrarSolicitud.html">Nueva solicitud</a>
+          <a class="proto-nav__link" href="P-RegistrarOC.html">P-046 Registrar OC</a>
+        </div>
+      </details>
+      <details class="proto-nav__dropdown" open>
+        <summary class="proto-nav__dropdown-summary proto-nav__dropdown-summary--active">Órdenes de Trabajo &#9662;</summary>
+        <div class="proto-nav__dropdown-menu">
+          <a class="proto-nav__link" href="P-DashBrdOrdenesTrabajo.html">Dashboard OT</a>
+          <a class="proto-nav__link" href="P-DetalleOTCompra.html">P-049 Detalle OT (compra)</a>
+          <a class="proto-nav__link" href="P-DetalleOTHojaRuta.html">P-053 Hoja de ruta</a>
+          <a class="proto-nav__link proto-nav__link--active" href="P-ModificarHojaRuta.html">P-054 Modificar hoja de ruta</a>
+          <a class="proto-nav__link" href="P-ImprimirHojaRuta.html">P-055 Imprimir hoja de ruta</a>
+        </div>
+      </details>
+      <details class="proto-nav__dropdown">
+        <summary class="proto-nav__dropdown-summary">Asistente de cotización (pasos) &#9662;</summary>
+        <div class="proto-nav__dropdown-menu">
+          <a class="proto-nav__link" href="P-WizardDatosGenerales.html">P-020 Datos generales</a>
+          <a class="proto-nav__link" href="P-WizardPiezas.html">P-021 Piezas</a>
+          <a class="proto-nav__link" href="P-WizardAgregarPieza.html">P-022 Agregar pieza</a>
+          <a class="proto-nav__link" href="P-WizardSeleccionarProveedor.html">P-025 Sel. proveedor</a>
+          <a class="proto-nav__link" href="P-WizardProcesosPropios.html">P-026 Procesos</a>
+          <a class="proto-nav__link" href="P-WizardSeleccionarProceso.html">P-028 Sel. proceso</a>
+          <a class="proto-nav__link" href="P-WizardTercerizacionPieza.html">P-029 Tercerización</a>
+          <a class="proto-nav__link" href="P-WizardAgregarTratamiento.html">Agregar tratamiento</a>
+          <a class="proto-nav__link" href="P-WizardCostosPieza.html">P-030 Costos pieza</a>
+          <a class="proto-nav__link" href="P-WizardConjunto.html">Conjunto / ensamble</a>
+          <a class="proto-nav__link" href="P-WizardResumen.html">P-033 Resumen y confirmación</a>
+        </div>
+      </details>
+    </div>
+  </nav>
+
+  <div class="modal-page">
+    <div class="modal-page__ghost-header"></div>
+    <div class="modal-page__ghost-bar"></div>
+    <div class="modal-page__ghost-card"></div>
+
+    <div class="modal-scrim">
+      <div class="modal modal--lg">
+        <div class="modal__header">
+          <h2 class="modal__title">Modificar hoja de ruta · OT-1033</h2>
+          <a class="modal__close" href="P-DetalleOTHojaRuta.html" aria-label="Cerrar">×</a>
+        </div>
+
+        <div class="modal__body">
+          <div class="tabs">
+            <input type="radio" name="hojaRutaTabs" class="tabs__radio" id="tabProcesos" checked>
+            <input type="radio" name="hojaRutaTabs" class="tabs__radio" id="tabHistorial">
+
+            <div class="tabs__nav">
+              <label class="tabs__link" for="tabProcesos">Procesos</label>
+              <label class="tabs__link" for="tabHistorial">Historial de modificaciones</label>
+            </div>
+
+            <div class="tabs__panels">
+
+              <!-- Panel: Procesos -->
+              <div class="tabs__panel">
+                <div class="process-accordion">
+
+                  <details class="process-accordion__item">
+                    <summary class="process-accordion__summary">
+                      <span class="process-accordion__summary-left">
+                        <span class="process-accordion__order">1</span>
+                        <span class="process-accordion__name">Corte de material</span>
+                      </span>
+                      <span class="process-accordion__summary-right">
+                        <span class="badge badge--simple">Propio</span>
+                        <svg class="process-accordion__chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                          <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </span>
+                    </summary>
+                    <div class="process-accordion__body">
+                      <div class="form-grid">
+                        <div class="form-field">
+                          <label class="form-field__label">Tipo de proceso</label>
+                          <input class="form-field__input" type="text" value="Corte de material">
+                        </div>
+                        <div class="form-field">
+                          <label class="form-field__label">Orden</label>
+                          <input class="form-field__input" type="text" value="1">
+                        </div>
+                        <div class="form-field">
+                          <label class="form-field__label">Horas estimadas</label>
+                          <input class="form-field__input" type="text" value="1,8 h">
+                        </div>
+                        <div class="form-field">
+                          <label class="form-field__label">Tercerizado</label>
+                          <div class="segmented">
+                            <span class="segmented__option segmented__option--active">No</span>
+                            <span class="segmented__option">Sí (requiere proveedor)</span>
+                          </div>
+                        </div>
+                      </div>
+                      <a class="process-accordion__remove" href="#">Eliminar proceso</a>
+                    </div>
+                  </details>
+
+                  <details class="process-accordion__item" open>
+                    <summary class="process-accordion__summary">
+                      <span class="process-accordion__summary-left">
+                        <span class="process-accordion__order">2</span>
+                        <span class="process-accordion__name">Mecanizado Torno CNC</span>
+                      </span>
+                      <span class="process-accordion__summary-right">
+                        <span class="badge badge--simple">Propio</span>
+                        <svg class="process-accordion__chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                          <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </span>
+                    </summary>
+                    <div class="process-accordion__body">
+                      <div class="form-grid">
+                        <div class="form-field">
+                          <label class="form-field__label">Tipo de proceso</label>
+                          <input class="form-field__input" type="text" value="Mecanizado Torno CNC">
+                        </div>
+                        <div class="form-field">
+                          <label class="form-field__label">Orden</label>
+                          <input class="form-field__input" type="text" value="2">
+                        </div>
+                        <div class="form-field">
+                          <label class="form-field__label">Horas estimadas</label>
+                          <input class="form-field__input" type="text" value="5,0 h">
+                        </div>
+                        <div class="form-field">
+                          <label class="form-field__label">Tercerizado</label>
+                          <div class="segmented">
+                            <span class="segmented__option segmented__option--active">No</span>
+                            <span class="segmented__option">Sí (requiere proveedor)</span>
+                          </div>
+                        </div>
+                      </div>
+                      <a class="process-accordion__remove" href="#">Eliminar proceso</a>
+                    </div>
+                  </details>
+
+                  <details class="process-accordion__item">
+                    <summary class="process-accordion__summary">
+                      <span class="process-accordion__summary-left">
+                        <span class="process-accordion__order">3</span>
+                        <span class="process-accordion__name">Torno manual</span>
+                      </span>
+                      <span class="process-accordion__summary-right">
+                        <span class="badge badge--simple">Propio</span>
+                        <svg class="process-accordion__chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                          <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </span>
+                    </summary>
+                    <div class="process-accordion__body">
+                      <div class="form-grid">
+                        <div class="form-field">
+                          <label class="form-field__label">Tipo de proceso</label>
+                          <input class="form-field__input" type="text" value="Torno manual">
+                        </div>
+                        <div class="form-field">
+                          <label class="form-field__label">Orden</label>
+                          <input class="form-field__input" type="text" value="3">
+                        </div>
+                        <div class="form-field">
+                          <label class="form-field__label">Horas estimadas</label>
+                          <input class="form-field__input" type="text" value="2,5 h">
+                        </div>
+                        <div class="form-field">
+                          <label class="form-field__label">Tercerizado</label>
+                          <div class="segmented">
+                            <span class="segmented__option segmented__option--active">No</span>
+                            <span class="segmented__option">Sí (requiere proveedor)</span>
+                          </div>
+                        </div>
+                      </div>
+                      <a class="process-accordion__remove" href="#">Eliminar proceso</a>
+                    </div>
+                  </details>
+
+                  <details class="process-accordion__item">
+                    <summary class="process-accordion__summary">
+                      <span class="process-accordion__summary-left">
+                        <span class="process-accordion__order">4</span>
+                        <span class="process-accordion__name">Zincado</span>
+                      </span>
+                      <span class="process-accordion__summary-right">
+                        <span class="badge badge--tercerizado">Tercerizado</span>
+                        <svg class="process-accordion__chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                          <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </span>
+                    </summary>
+                    <div class="process-accordion__body">
+                      <div class="form-grid">
+                        <div class="form-field">
+                          <label class="form-field__label">Tipo de proceso</label>
+                          <input class="form-field__input" type="text" value="Zincado">
+                        </div>
+                        <div class="form-field">
+                          <label class="form-field__label">Orden</label>
+                          <input class="form-field__input" type="text" value="4">
+                        </div>
+                        <div class="form-field">
+                          <label class="form-field__label">Horas estimadas</label>
+                          <input class="form-field__input" type="text" placeholder="— vacío">
+                        </div>
+                        <div class="form-field">
+                          <label class="form-field__label">Tercerizado</label>
+                          <div class="segmented">
+                            <span class="segmented__option">No</span>
+                            <span class="segmented__option segmented__option--active">Sí (requiere proveedor)</span>
+                          </div>
+                        </div>
+                        <div class="form-field form-field--full">
+                          <label class="form-field__label">Proveedor</label>
+                          <select class="form-field__select">
+                            <option>Zincados del Sur</option>
+                            <option>Recubrimientos del Litoral</option>
+                          </select>
+                        </div>
+                      </div>
+                      <a class="process-accordion__remove" href="#">Eliminar proceso</a>
+                    </div>
+                  </details>
+
+                  <a class="process-accordion__add" href="#">
+                    <span aria-hidden="true">+</span> Agregar proceso
+                  </a>
+
+                </div>
+
+                <div class="subsection">
+                  <div class="form-field">
+                    <label class="form-field__label" for="motivoCambio">Motivo del cambio *</label>
+                    <input class="form-field__input" id="motivoCambio" type="text" value="Se aumentan las horas de CNC por complejidad del ranurado.">
+                  </div>
+                </div>
+
+                <p class="info-note">
+                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/><line x1="8" y1="7" x2="8" y2="11.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="4.8" r="0.9" fill="currentColor"/></svg>
+                  El cambio se registra en el historial de la hoja de ruta (fecha, responsable, detalle de lo modificado). No modifica el precio pactado.
+                </p>
+              </div>
+
+              <!-- Panel: Historial de modificaciones -->
+              <div class="tabs__panel">
+                <div class="cost-list">
+                  <div class="cost-list__row">
+                    <span class="cost-list__label">
+                      Mecanizado Torno CNC — Horas estimadas
+                      <span class="cost-list__sublabel">14/07/2025 · Denise Nagel · "Se aumentan las horas de CNC por complejidad del ranurado."</span>
+                    </span>
+                    <span class="cost-list__value">4,0 h → 5,0 h</span>
+                  </div>
+                  <div class="cost-list__row">
+                    <span class="cost-list__label">
+                      Zincado — Tercerizado
+                      <span class="cost-list__sublabel">10/07/2025 · Mateo Castro · "Se terceriza el zincado por falta de capacidad interna."</span>
+                    </span>
+                    <span class="cost-list__value">No → Sí</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="modal__footer modal__footer--end">
+          <a class="modal__cancel" href="P-DetalleOTHojaRuta.html">Cancelar</a>
+          <a class="btn btn--success" href="P-DetalleOTHojaRuta.html">Guardar cambios</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

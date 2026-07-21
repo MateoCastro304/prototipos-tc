@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OT-1033 · Compra de material · Tornería Castro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+  <nav class="proto-nav" aria-label="Navegación entre prototipos">
+    <span class="proto-nav__label">Prototipos</span>
+    <div class="proto-nav__groups">
+      <details class="proto-nav__dropdown">
+        <summary class="proto-nav__dropdown-summary">Cotizaciones &#9662;</summary>
+        <div class="proto-nav__dropdown-menu">
+          <a class="proto-nav__link" href="P-DashBrdCotizaciones.html">P-016 Dashboard</a>
+          <a class="proto-nav__link" href="P-DetalleCotizacion.html">P-018 Detalle</a>
+          <a class="proto-nav__link" href="P-DetalleCotizacionPendiente.html">Detalle pendiente</a>
+          <a class="proto-nav__link" href="P-RegistrarSolicitud.html">Nueva solicitud</a>
+          <a class="proto-nav__link" href="P-RegistrarOC.html">P-046 Registrar OC</a>
+        </div>
+      </details>
+      <details class="proto-nav__dropdown" open>
+        <summary class="proto-nav__dropdown-summary proto-nav__dropdown-summary--active">Órdenes de Trabajo &#9662;</summary>
+        <div class="proto-nav__dropdown-menu">
+          <a class="proto-nav__link" href="P-DashBrdOrdenesTrabajo.html">Dashboard OT</a>
+          <a class="proto-nav__link proto-nav__link--active" href="P-DetalleOTCompra.html">P-049 Detalle OT (compra)</a>
+          <a class="proto-nav__link" href="P-DetalleOTHojaRuta.html">P-053 Hoja de ruta</a>
+          <a class="proto-nav__link" href="P-ModificarHojaRuta.html">P-054 Modificar hoja de ruta</a>
+          <a class="proto-nav__link" href="P-ImprimirHojaRuta.html">P-055 Imprimir hoja de ruta</a>
+        </div>
+      </details>
+      <details class="proto-nav__dropdown">
+        <summary class="proto-nav__dropdown-summary">Asistente de cotización (pasos) &#9662;</summary>
+        <div class="proto-nav__dropdown-menu">
+          <a class="proto-nav__link" href="P-WizardDatosGenerales.html">P-020 Datos generales</a>
+          <a class="proto-nav__link" href="P-WizardPiezas.html">P-021 Piezas</a>
+          <a class="proto-nav__link" href="P-WizardAgregarPieza.html">P-022 Agregar pieza</a>
+          <a class="proto-nav__link" href="P-WizardSeleccionarProveedor.html">P-025 Sel. proveedor</a>
+          <a class="proto-nav__link" href="P-WizardProcesosPropios.html">P-026 Procesos</a>
+          <a class="proto-nav__link" href="P-WizardSeleccionarProceso.html">P-028 Sel. proceso</a>
+          <a class="proto-nav__link" href="P-WizardTercerizacionPieza.html">P-029 Tercerización</a>
+          <a class="proto-nav__link" href="P-WizardAgregarTratamiento.html">Agregar tratamiento</a>
+          <a class="proto-nav__link" href="P-WizardCostosPieza.html">P-030 Costos pieza</a>
+          <a class="proto-nav__link" href="P-WizardConjunto.html">Conjunto / ensamble</a>
+          <a class="proto-nav__link" href="P-WizardResumen.html">P-033 Resumen y confirmación</a>
+        </div>
+      </details>
+    </div>
+  </nav>
+  <div class="app">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <div class="sidebar__logo">TC</div>
+        <div class="sidebar__brand-text">
+          <span class="sidebar__brand-name">Tornería Castro</span>
+          <span class="sidebar__brand-sub">Gestión &amp; Producción</span>
+        </div>
+      </div>
+
+      <nav class="sidebar__nav">
+        <div class="sidebar__section">
+          <ul class="sidebar__list">
+            <li>
+              <a class="sidebar__link" href="#">
+                <span class="sidebar__icon" aria-hidden="true"></span>
+                Inicio
+              </a>
+            </li>
+            <li>
+              <a class="sidebar__link" href="P-DashBrdCotizaciones.html">
+                <span class="sidebar__icon" aria-hidden="true"></span>
+                Cotizaciones
+              </a>
+            </li>
+            <li>
+              <a class="sidebar__link sidebar__link--active" href="P-DashBrdOrdenesTrabajo.html" aria-current="page">
+                <span class="sidebar__icon" aria-hidden="true"></span>
+                Órdenes de Trabajo
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- ===================== MAIN ===================== -->
+    <div class="main">
+
+      <!-- Topbar -->
+      <header class="topbar">
+        <nav class="topbar__breadcrumb" aria-label="breadcrumb">
+          <span class="topbar__breadcrumb-item">Producción</span>
+          <span class="topbar__breadcrumb-sep">/</span>
+          <span class="topbar__breadcrumb-item">Órdenes de Trabajo</span>
+          <span class="topbar__breadcrumb-sep">/</span>
+          <span class="topbar__breadcrumb-item topbar__breadcrumb-item--current">OT-1033 · Compra</span>
+        </nav>
+
+        <div class="topbar__search">
+          <svg class="topbar__search-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="13.5" y1="13.5" x2="18" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <input class="topbar__search-input" type="text" placeholder="Buscar...">
+        </div>
+      </header>
+
+      <!-- Content -->
+      <main class="content">
+
+        <!-- Detail header -->
+        <div class="detail-header">
+          <div class="detail-header__left">
+            <a class="detail-header__back" href="P-DashBrdOrdenesTrabajo.html" aria-label="Volver">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M10 3L4.5 8L10 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div class="detail-header__title-row">
+              <h1 class="detail-header__title">Compra de material · OT-1033</h1>
+            </div>
+          </div>
+        </div>
+
+        <!-- Planificado vs. Real -->
+        <section class="compare-card" aria-label="Planificado vs. compra real">
+          <div class="compare-card__grid">
+            <div class="compare-card__col">
+              <p class="compare-card__label">Planificado (cotización)</p>
+              <p class="compare-card__material">Acero 1045 · Cilindro sólido</p>
+              <p class="compare-card__detail">Proveedor: <strong>Metalúrgica Sur</strong></p>
+              <p class="compare-card__detail">Cantidad estimada: <strong>12,5 kg</strong></p>
+            </div>
+
+            <div class="compare-card__col">
+              <p class="compare-card__label">Real (compra)</p>
+              <div class="compare-card__col-header">
+                <h2 class="compare-card__subtitle">Compra real</h2>
+                <a class="table__action" href="#">Cambiar proveedor / material</a>
+              </div>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-field__label" for="proveedorReal">Proveedor real</label>
+                  <input class="form-field__input" id="proveedorReal" type="text" value="Aceros del Litoral">
+                </div>
+                <div class="form-field">
+                  <label class="form-field__label" for="cantidadReal">Cantidad real</label>
+                  <input class="form-field__input" id="cantidadReal" type="text" value="13,0 kg">
+                </div>
+                <div class="form-field">
+                  <label class="form-field__label" for="precioReal">Precio total real</label>
+                  <input class="form-field__input" id="precioReal" type="text" value="$ 33.930">
+                </div>
+                <div class="form-field">
+                  <label class="form-field__label" for="remitoReal">N° remito</label>
+                  <input class="form-field__input" id="remitoReal" type="text" value="R-88213">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout callout--warning compare-card__callout">
+            <svg class="callout__icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/>
+              <line x1="8" y1="5" x2="8" y2="9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              <circle cx="8" cy="11.2" r="0.9" fill="currentColor"/>
+            </svg>
+            <span>Cambio de proveedor respecto a lo cotizado — quedará registrado en el historial de la OT.</span>
+          </div>
+
+          <div class="compare-card__footer">
+            <a class="modal__cancel" href="P-DashBrdOrdenesTrabajo.html">Cancelar</a>
+            <a class="btn btn--success" href="P-DashBrdOrdenesTrabajo.html">Registrar compra ›</a>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imprimir hoja de ruta · OT-1033 · Tornería Castro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+  <nav class="proto-nav" aria-label="Navegación entre prototipos">
+    <span class="proto-nav__label">Prototipos</span>
+    <div class="proto-nav__groups">
+      <details class="proto-nav__dropdown">
+        <summary class="proto-nav__dropdown-summary">Cotizaciones &#9662;</summary>
+        <div class="proto-nav__dropdown-menu">
+          <a class="proto-nav__link" href="P-DashBrdCotizaciones.html">P-016 Dashboard</a>
+          <a class="proto-nav__link" href="P-DetalleCotizacion.html">P-018 Detalle</a>
+          <a class="proto-nav__link" href="P-DetalleCotizacionPendiente.html">Detalle pendiente</a>
+          <a class="proto-nav__link" href="P-RegistrarSolicitud.html">Nueva solicitud</a>
+          <a class="proto-nav__link" href="P-RegistrarOC.html">P-046 Registrar OC</a>
+        </div>
+      </details>
+      <details class="proto-nav__dropdown" open>
+        <summary class="proto-nav__dropdown-summary proto-nav__dropdown-summary--active">Órdenes de Trabajo &#9662;</summary>
+        <div class="proto-nav__dropdown-menu">
+          <a class="proto-nav__link" href="P-DashBrdOrdenesTrabajo.html">Dashboard OT</a>
+          <a class="proto-nav__link" href="P-DetalleOTCompra.html">P-049 Detalle OT (compra)</a>
+          <a class="proto-nav__link" href="P-DetalleOTHojaRuta.html">P-053 Hoja de ruta</a>
+          <a class="proto-nav__link" href="P-ModificarHojaRuta.html">P-054 Modificar hoja de ruta</a>
+          <a class="proto-nav__link proto-nav__link--active" href="P-ImprimirHojaRuta.html">P-055 Imprimir hoja de ruta</a>
+        </div>
+      </details>
+      <details class="proto-nav__dropdown">
+        <summary class="proto-nav__dropdown-summary">Asistente de cotización (pasos) &#9662;</summary>
+        <div class="proto-nav__dropdown-menu">
+          <a class="proto-nav__link" href="P-WizardDatosGenerales.html">P-020 Datos generales</a>
+          <a class="proto-nav__link" href="P-WizardPiezas.html">P-021 Piezas</a>
+          <a class="proto-nav__link" href="P-WizardAgregarPieza.html">P-022 Agregar pieza</a>
+          <a class="proto-nav__link" href="P-WizardSeleccionarProveedor.html">P-025 Sel. proveedor</a>
+          <a class="proto-nav__link" href="P-WizardProcesosPropios.html">P-026 Procesos</a>
+          <a class="proto-nav__link" href="P-WizardSeleccionarProceso.html">P-028 Sel. proceso</a>
+          <a class="proto-nav__link" href="P-WizardTercerizacionPieza.html">P-029 Tercerización</a>
+          <a class="proto-nav__link" href="P-WizardAgregarTratamiento.html">Agregar tratamiento</a>
+          <a class="proto-nav__link" href="P-WizardCostosPieza.html">P-030 Costos pieza</a>
+          <a class="proto-nav__link" href="P-WizardConjunto.html">Conjunto / ensamble</a>
+          <a class="proto-nav__link" href="P-WizardResumen.html">P-033 Resumen y confirmación</a>
+        </div>
+      </details>
+    </div>
+  </nav>
+
+  <div class="print-preview">
+    <div class="print-preview__scroll">
+      <article class="print-preview__page">
+        <div class="print-preview__header">
+          <div class="print-preview__brand">
+            <div class="print-preview__logo">TC</div>
+            <div>
+              <div class="print-preview__brand-name">Tornería Castro SRL</div>
+              <span class="print-preview__brand-sub">Hoja de Ruta de Producción</span>
+            </div>
+          </div>
+          <div class="print-preview__meta">
+            <div class="print-preview__meta-title">OT-1033</div>
+            <div class="print-preview__meta-line">Pieza: EDA-119 · Eje ranurado</div>
+            <div class="print-preview__meta-line">Cantidad: 1 · Entrega: 28/07/2025</div>
+          </div>
+        </div>
+
+        <table class="print-table">
+          <thead>
+            <tr>
+              <th>Ord</th>
+              <th>Proceso</th>
+              <th>H. Est.</th>
+              <th>Responsable</th>
+              <th>H. Reales</th>
+              <th>Observaciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="print-table__num">1</td>
+              <td>Corte de material</td>
+              <td class="print-table__num">1,0</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="print-table__num">2</td>
+              <td>Mecanizado Torno CNC</td>
+              <td class="print-table__num">4,0</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="print-table__num">3</td>
+              <td>Torno manual</td>
+              <td class="print-table__num">2,5</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="print-table__num">4</td>
+              <td>Zincado (tercerizado)</td>
+              <td class="print-table__num">—</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </div>
+
+    <div class="print-preview__toolbar">
+      <a class="btn btn--outline" href="P-ModificarHojaRuta.html">Volver a editar</a>
+      <a class="btn btn--outline" href="#">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="3" y="6" width="10" height="5.5" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M4.5 6V2.5h7V6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 10.5v3h7v-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Imprimir
+      </a>
+      <a class="btn btn--success" href="P-DashBrdOrdenesTrabajo.html">Confirmar inicio de construcción ›</a>
+    </div>
+  </div>
+</body>
+</html>

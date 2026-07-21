@@ -12,14 +12,28 @@
 <body>
   <nav class="proto-nav" aria-label="Navegación entre prototipos">
     <span class="proto-nav__label">Prototipos</span>
-    <div class="proto-nav__links">
-      <a class="proto-nav__link" href="P-DashBrdCotizaciones.html">P-016 Dashboard</a>
-      <a class="proto-nav__link proto-nav__link--active" href="P-DetalleCotizacion.html">P-018 Detalle</a>
-      <a class="proto-nav__link" href="P-DetalleCotizacionPendiente.html">Detalle pendiente</a>
-      <a class="proto-nav__link" href="P-RegistrarSolicitud.html">Nueva solicitud</a>
-      <a class="proto-nav__link" href="P-RegistrarOC.html">P-046 Registrar OC</a>
-    </div>
-    <details class="proto-nav__dropdown">
+    <div class="proto-nav__groups">
+      <details class="proto-nav__dropdown" open>
+        <summary class="proto-nav__dropdown-summary proto-nav__dropdown-summary--active">Cotizaciones &#9662;</summary>
+        <div class="proto-nav__dropdown-menu">
+          <a class="proto-nav__link" href="P-DashBrdCotizaciones.html">P-016 Dashboard</a>
+          <a class="proto-nav__link proto-nav__link--active" href="P-DetalleCotizacion.html">P-018 Detalle</a>
+          <a class="proto-nav__link" href="P-DetalleCotizacionPendiente.html">Detalle pendiente</a>
+          <a class="proto-nav__link" href="P-RegistrarSolicitud.html">Nueva solicitud</a>
+          <a class="proto-nav__link" href="P-RegistrarOC.html">P-046 Registrar OC</a>
+        </div>
+      </details>
+      <details class="proto-nav__dropdown">
+        <summary class="proto-nav__dropdown-summary">Órdenes de Trabajo &#9662;</summary>
+        <div class="proto-nav__dropdown-menu">
+          <a class="proto-nav__link" href="P-DashBrdOrdenesTrabajo.html">Dashboard OT</a>
+          <a class="proto-nav__link" href="P-DetalleOTCompra.html">P-049 Detalle OT (compra)</a>
+          <a class="proto-nav__link" href="P-DetalleOTHojaRuta.html">P-053 Hoja de ruta</a>
+          <a class="proto-nav__link" href="P-ModificarHojaRuta.html">P-054 Modificar hoja de ruta</a>
+          <a class="proto-nav__link" href="P-ImprimirHojaRuta.html">P-055 Imprimir hoja de ruta</a>
+        </div>
+      </details>
+      <details class="proto-nav__dropdown">
         <summary class="proto-nav__dropdown-summary">Asistente de cotización (pasos) &#9662;</summary>
         <div class="proto-nav__dropdown-menu">
           <a class="proto-nav__link" href="P-WizardDatosGenerales.html">P-020 Datos generales</a>
@@ -35,6 +49,7 @@
           <a class="proto-nav__link" href="P-WizardResumen.html">P-033 Resumen y confirmación</a>
         </div>
       </details>
+    </div>
   </nav>
   <div class="app">
 
