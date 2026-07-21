@@ -563,6 +563,19 @@ table {
   color: var(--color-accent-blue);
 }
 
+.stats--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stat-card--alert {
+  border-color: var(--color-accent-red);
+  background: var(--color-badge-vencido-bg);
+}
+
+.stat-card--alert .stat-card__value {
+  color: var(--color-accent-red);
+}
+
 /* --- Filters --- */
 .filters {
   display: flex;
@@ -697,6 +710,10 @@ table {
   background: var(--color-bg-page);
 }
 
+.table__row--delayed {
+  box-shadow: inset 3px 0 0 var(--color-accent-red);
+}
+
 .table__td {
   padding: var(--space-4) var(--space-5);
   font-size: var(--fs-sm);
@@ -799,6 +816,16 @@ table {
 .badge--pendiente {
   background: var(--color-badge-pendiente-bg);
   color: var(--color-badge-pendiente-text);
+}
+
+.badge--compra-material {
+  background: var(--color-surface-muted);
+  color: var(--color-text-secondary);
+}
+
+.badge--demorado {
+  background: var(--color-badge-vencido-bg);
+  color: var(--color-badge-vencido-text);
 }
 
 /* --- Table footer / pagination --- */

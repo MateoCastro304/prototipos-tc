@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cotizaciones · Tornería Castro</title>
+  <title>Órdenes de Trabajo · Tornería Castro</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,11 +13,12 @@
   <nav class="proto-nav" aria-label="Navegación entre prototipos">
     <span class="proto-nav__label">Prototipos</span>
     <div class="proto-nav__links">
-      <a class="proto-nav__link proto-nav__link--active" href="P-DashBrdCotizaciones.html">P-016 Dashboard</a>
+      <a class="proto-nav__link" href="P-DashBrdCotizaciones.html">P-016 Dashboard</a>
       <a class="proto-nav__link" href="P-DetalleCotizacion.html">P-018 Detalle</a>
       <a class="proto-nav__link" href="P-DetalleCotizacionPendiente.html">Detalle pendiente</a>
       <a class="proto-nav__link" href="P-RegistrarSolicitud.html">Nueva solicitud</a>
-      <a class="proto-nav__link" href="P-DashBrdOrdenesTrabajo.html">Dashboard OT</a>
+      <a class="proto-nav__link" href="P-RegistrarOC.html">P-046 Registrar OC</a>
+      <a class="proto-nav__link proto-nav__link--active" href="P-DashBrdOrdenesTrabajo.html">Dashboard OT</a>
     </div>
     <details class="proto-nav__dropdown">
         <summary class="proto-nav__dropdown-summary">Asistente de cotización (pasos) &#9662;</summary>
@@ -58,13 +59,13 @@
               </a>
             </li>
             <li>
-              <a class="sidebar__link sidebar__link--active" href="P-DashBrdCotizaciones.html" aria-current="page">
+              <a class="sidebar__link" href="P-DashBrdCotizaciones.html">
                 <span class="sidebar__icon" aria-hidden="true"></span>
                 Cotizaciones
               </a>
             </li>
             <li>
-              <a class="sidebar__link" href="P-DashBrdOrdenesTrabajo.html">
+              <a class="sidebar__link sidebar__link--active" href="P-DashBrdOrdenesTrabajo.html" aria-current="page">
                 <span class="sidebar__icon" aria-hidden="true"></span>
                 Órdenes de Trabajo
               </a>
@@ -80,9 +81,9 @@
       <!-- Topbar -->
       <header class="topbar">
         <nav class="topbar__breadcrumb" aria-label="breadcrumb">
-          <span class="topbar__breadcrumb-item">Comercial</span>
+          <span class="topbar__breadcrumb-item">Producción</span>
           <span class="topbar__breadcrumb-sep">/</span>
-          <span class="topbar__breadcrumb-item topbar__breadcrumb-item--current">Cotizaciones</span>
+          <span class="topbar__breadcrumb-item topbar__breadcrumb-item--current">Órdenes de Trabajo</span>
         </nav>
 
         <div class="topbar__search">
@@ -90,7 +91,7 @@
             <circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.5"/>
             <line x1="13.5" y1="13.5" x2="18" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
-          <input class="topbar__search-input" type="text" placeholder="Buscar cotización, cliente o N° de plano...">
+          <input class="topbar__search-input" type="text" placeholder="Buscar orden de trabajo...">
         </div>
       </header>
 
@@ -99,27 +100,28 @@
 
         <div class="content__heading">
           <div class="content__heading-text">
-            <h1 class="content__title">Cotizaciones</h1>
-            <p class="content__subtitle">Panorama de cotizaciones registradas y su estado.</p>
+            <h1 class="content__title">Órdenes de Trabajo</h1>
+            <p class="content__subtitle">Trabajos en curso en el taller: <strong>1 demorado</strong>.</p>
           </div>
-          <button type="button" class="btn btn--primary content__cta">
-            <span aria-hidden="true">+</span> Registrar Solicitud de cotización
-          </button>
         </div>
 
         <!-- Stats -->
-        <section class="stats" aria-label="Resumen de cotizaciones">
+        <section class="stats stats--4" aria-label="Resumen de órdenes de trabajo">
           <article class="stat-card">
-            <span class="stat-card__label">Pend. de cotizar</span>
-            <span class="stat-card__value">4</span>
+            <span class="stat-card__label">Por comprar material</span>
+            <span class="stat-card__value">1</span>
           </article>
           <article class="stat-card">
-            <span class="stat-card__label">Cotizadas vigentes</span>
-            <span class="stat-card__value stat-card__value--blue">11</span>
+            <span class="stat-card__label">Por construir</span>
+            <span class="stat-card__value">1</span>
           </article>
           <article class="stat-card">
-            <span class="stat-card__label">Adjudicadas (mes)</span>
-            <span class="stat-card__value">6</span>
+            <span class="stat-card__label">En construcción</span>
+            <span class="stat-card__value stat-card__value--blue">3</span>
+          </article>
+          <article class="stat-card stat-card--alert">
+            <span class="stat-card__label">Demorados</span>
+            <span class="stat-card__value">1</span>
           </article>
         </section>
 
@@ -130,7 +132,7 @@
               <circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.5"/>
               <line x1="13.5" y1="13.5" x2="18" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
-            <input class="filters__search-input" type="text" placeholder="Buscar por descripción o N° de plano">
+            <input class="filters__search-input" type="text" placeholder="Buscar por descripción...">
           </div>
 
           <button type="button" class="filters__dropdown">
@@ -140,116 +142,97 @@
             </svg>
           </button>
 
-          <button type="button" class="filters__dropdown">
-            Cliente
-            <svg class="filters__chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true">
-              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-
-          <div class="filters__daterange">
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <rect x="2" y="3" width="12" height="11" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
-              <line x1="2" y1="6.5" x2="14" y2="6.5" stroke="currentColor" stroke-width="1.3"/>
-              <line x1="5" y1="1.5" x2="5" y2="4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
-              <line x1="11" y1="1.5" x2="11" y2="4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
-            </svg>
-            <input class="filters__date-input" type="text" value="01/07/2025" readonly aria-label="Fecha desde">
-            <span class="filters__date-sep">–</span>
-            <input class="filters__date-input" type="text" value="13/07/2025" readonly aria-label="Fecha hasta">
+          <div class="segmented" role="group" aria-label="Ordenar por fecha de entrega">
+            <span class="segmented__option segmented__option--active">Más reciente</span>
+            <span class="segmented__option">Más antigua</span>
           </div>
         </section>
 
         <!-- Table -->
-        <section class="table-card" aria-label="Listado de cotizaciones">
+        <section class="table-card" aria-label="Listado de órdenes de trabajo">
           <div class="table-card__scroll">
             <table class="table">
               <thead>
                 <tr>
-                  <th class="table__th">N° cotiz.</th>
-                  <th class="table__th">Cliente</th>
-                  <th class="table__th">Fecha de solicitud</th>
+                  <th class="table__th">N° OT</th>
+                  <th class="table__th">Cotización</th>
                   <th class="table__th">Descripción</th>
-                  <th class="table__th">Precio final</th>
+                  <th class="table__th table__th--center">Piezas</th>
                   <th class="table__th">Estado</th>
+                  <th class="table__th">Demorado</th>
+                  <th class="table__th">Entrega</th>
                   <th class="table__th">Acciones</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="table__row">
-                  <td class="table__td table__td--code">COT-2451</td>
-                  <td class="table__td table__td--client">CorBlock</td>
-                  <td class="table__td">08/07/2025</td>
-                  <td class="table__td">Cotización en preparación</td>
-                  <td class="table__td table__td--muted">–</td>
-                  <td class="table__td">
-                    <span class="badge badge--pendiente">Pendiente</span>
-                  </td>
-                  <td class="table__td table__td--actions">
-                    <a class="table__action" href="#">Ver</a>
-                  </td>
-                </tr>
-                <tr class="table__row">
-                  <td class="table__td table__td--code">COT-2456</td>
-                  <td class="table__td table__td--client">EDASA</td>
-                  <td class="table__td">04/07/2025</td>
-                  <td class="table__td">Bujes de bronce y eje ranurado</td>
-                  <td class="table__td table__td--price">$ 184.400</td>
-                  <td class="table__td">
-                    <span class="badge badge--cotizado">Cotizado</span>
-                  </td>
-                  <td class="table__td table__td--actions">
-                    <a class="table__action" href="#">Ver</a>
-                  </td>
-                </tr>
-                <tr class="table__row">
-                  <td class="table__td table__td--code">COT-2455</td>
-                  <td class="table__td table__td--client">CorBlock</td>
-                  <td class="table__td">30/06/2025</td>
+                  <td class="table__td table__td--code">OT-1032</td>
+                  <td class="table__td table__td--muted">COT-2455</td>
                   <td class="table__td">Reparación soporte de motor</td>
-                  <td class="table__td table__td--price">USD 640</td>
+                  <td class="table__td table__td--center">1</td>
                   <td class="table__td">
-                    <span class="badge badge--adjudicado">Adjudicado</span>
+                    <span class="badge badge--cotizado">En Construcción</span>
                   </td>
+                  <td class="table__td table__td--muted">–</td>
+                  <td class="table__td">18/07</td>
                   <td class="table__td table__td--actions">
                     <a class="table__action" href="#">Ver</a>
                   </td>
                 </tr>
-                <tr class="table__row">
-                  <td class="table__td table__td--code">COT-2454</td>
-                  <td class="table__td table__td--client">OxyCAM</td>
-                  <td class="table__td">01/07/2025</td>
-                  <td class="table__td">Piezas sin plano (OC-001/003)</td>
-                  <td class="table__td table__td--price">$ 92.100</td>
-                  <td class="table__td">
-                    <span class="badge badge--cotizado">Cotizado</span>
-                  </td>
-                  <td class="table__td table__td--actions">
-                    <a class="table__action" href="#">Ver</a>
-                  </td>
-                </tr>
-                <tr class="table__row">
-                  <td class="table__td table__td--code">COT-2453</td>
-                  <td class="table__td table__td--client">EDASA</td>
-                  <td class="table__td">18/06/2025</td>
-                  <td class="table__td">Tapa de cilindro CNC</td>
-                  <td class="table__td table__td--price">$ 47.800</td>
-                  <td class="table__td">
-                    <span class="badge badge--vencido">Vencido</span>
-                  </td>
-                  <td class="table__td table__td--actions">
-                    <a class="table__action" href="#">Ver</a>
-                  </td>
-                </tr>
-                <tr class="table__row">
-                  <td class="table__td table__td--code">COT-2452</td>
-                  <td class="table__td table__td--client">Metalúrgica Sur</td>
-                  <td class="table__td">15/06/2025</td>
+                <tr class="table__row table__row--delayed">
+                  <td class="table__td table__td--code">OT-1031</td>
+                  <td class="table__td table__td--muted">COT-2452</td>
                   <td class="table__td">Engranajes rectos x12</td>
-                  <td class="table__td table__td--price">$ 210.000</td>
+                  <td class="table__td table__td--center">12</td>
                   <td class="table__td">
-                    <span class="badge badge--adjudicado">Adjudicado</span>
+                    <span class="badge badge--cotizado">En Construcción</span>
                   </td>
+                  <td class="table__td">
+                    <span class="badge badge--demorado">+4 d</span>
+                  </td>
+                  <td class="table__td">09/07</td>
+                  <td class="table__td table__td--actions">
+                    <a class="table__action" href="#">Ver</a>
+                  </td>
+                </tr>
+                <tr class="table__row">
+                  <td class="table__td table__td--code">OT-1030</td>
+                  <td class="table__td table__td--muted">COT-2452</td>
+                  <td class="table__td">Eje de transmisión</td>
+                  <td class="table__td table__td--center">1</td>
+                  <td class="table__td">
+                    <span class="badge badge--pendiente">Pte. Construcción</span>
+                  </td>
+                  <td class="table__td table__td--muted">–</td>
+                  <td class="table__td">22/07</td>
+                  <td class="table__td table__td--actions">
+                    <a class="table__action" href="#">Ver</a>
+                  </td>
+                </tr>
+                <tr class="table__row">
+                  <td class="table__td table__td--code">OT-1029</td>
+                  <td class="table__td table__td--muted">COT-2450</td>
+                  <td class="table__td">Bridas Ø120</td>
+                  <td class="table__td table__td--center">6</td>
+                  <td class="table__td">
+                    <span class="badge badge--compra-material">Pte. Compra Material</span>
+                  </td>
+                  <td class="table__td table__td--muted">–</td>
+                  <td class="table__td">25/07</td>
+                  <td class="table__td table__td--actions">
+                    <a class="table__action" href="#">Ver</a>
+                  </td>
+                </tr>
+                <tr class="table__row">
+                  <td class="table__td table__td--code">OT-1028</td>
+                  <td class="table__td table__td--muted">COT-2449</td>
+                  <td class="table__td">Buje de bronce Ø40</td>
+                  <td class="table__td table__td--center">8</td>
+                  <td class="table__td">
+                    <span class="badge badge--cotizado">En Construcción</span>
+                  </td>
+                  <td class="table__td table__td--muted">–</td>
+                  <td class="table__td">19/07</td>
                   <td class="table__td table__td--actions">
                     <a class="table__action" href="#">Ver</a>
                   </td>
@@ -259,16 +242,7 @@
           </div>
 
           <div class="table-card__footer">
-            <span class="table-card__count">Mostrando 6 de 24 cotizaciones</span>
-            <nav class="pagination" aria-label="Paginación">
-              <button type="button" class="pagination__item pagination__item--active" aria-current="page">1</button>
-              <button type="button" class="pagination__item">2</button>
-              <button type="button" class="pagination__item pagination__item--next" aria-label="Página siguiente">
-                <svg viewBox="0 0 8 12" fill="none" aria-hidden="true">
-                  <path d="M1.5 1L6.5 6L1.5 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-            </nav>
+            <span class="table-card__count">Mostrando 5 de 5 órdenes de trabajo</span>
           </div>
         </section>
 
