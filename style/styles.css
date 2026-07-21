@@ -2160,6 +2160,12 @@ table {
   text-align: center;
 }
 
+.modal-body-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
 .modal__footer {
   display: flex;
   align-items: center;
@@ -2392,6 +2398,153 @@ table {
   font-weight: var(--fw-semibold);
   color: var(--color-text-primary);
   white-space: nowrap;
+}
+
+/* --- Recap de cotización a adjudicar (dentro de modal OC) --- */
+.quote-recap {
+  background: var(--color-bg-page);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.quote-recap__label {
+  margin: 0 0 var(--space-3);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.quote-recap__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: var(--space-3);
+  column-gap: var(--space-4);
+}
+
+.quote-recap__item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.quote-recap__item-label {
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+}
+
+.quote-recap__item-value {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+}
+
+/* --- Selector de piezas (adjudicación parcial) --- */
+.piece-select-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.piece-select__count {
+  font-size: var(--fs-2xs);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.piece-select {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.piece-select__all {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-page);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+}
+
+.piece-select__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.piece-select__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.piece-select__row:last-child {
+  border-bottom: none;
+}
+
+.piece-select__row--selected {
+  background: var(--color-highlight-bg);
+}
+
+.piece-select__checkbox,
+.piece-select__all-checkbox {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  accent-color: var(--color-accent-blue);
+}
+
+.piece-select__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.piece-select__code {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-accent-blue);
+}
+
+.piece-select__desc {
+  font-size: var(--fs-sm);
+  color: var(--color-text-primary);
+}
+
+.piece-select__qty {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.piece-select__price {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  min-width: 84px;
+  text-align: right;
+}
+
+/* --- Precio pactado (input grande, dentro de modal OC) --- */
+.form-field__input--price {
+  font-family: var(--font-mono);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
 }
 
 /* ==========================================================================
