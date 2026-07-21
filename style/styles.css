@@ -2831,6 +2831,68 @@ table {
   font-weight: var(--fw-bold);
 }
 
+/* --- Bloque de contenido con encabezado propio (registro de avance de OT) --- */
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.section-heading__title {
+  margin: 0;
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+}
+
+.section-heading__hint {
+  margin: var(--space-1) 0 0;
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+}
+
+.actions-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+/* --- Input compacto dentro de celdas de tabla --- */
+.table-input {
+  width: 100%;
+  min-width: 90px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+}
+
+.table-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* --- Diferencia estimado vs. real (merma de material) --- */
+.diff-value {
+  font-family: var(--font-mono);
+  font-weight: var(--fw-semibold);
+}
+
+.diff-value--neutral {
+  color: var(--color-text-muted);
+  font-weight: var(--fw-regular);
+}
+
+.diff-value--over {
+  color: var(--color-accent-red);
+}
+
+.diff-value--under {
+  color: var(--color-accent-green);
+}
+
 /* --- Vista previa de impresión (hoja de ruta A4) --- */
 .print-preview {
   min-height: calc(100vh - var(--topbar-height));
