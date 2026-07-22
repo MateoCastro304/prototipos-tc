@@ -2128,6 +2128,59 @@ table {
   color: var(--color-text-muted);
 }
 
+/* --- Inline treatment editor --- */
+.treatment-inline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.treatment-inline__trigger {
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-accent-blue);
+  cursor: pointer;
+  text-align: left;
+}
+
+.treatment-inline__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-top: var(--space-2);
+}
+
+.treatment-inline__detail {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-page);
+  padding: var(--space-3) var(--space-4);
+}
+
+.treatment-inline__detail-summary {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.treatment-inline__detail.is-hidden {
+  display: none;
+}
+
+.treatment-inline__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+.table__add-row[hidden] {
+  display: none;
+}
+
 /* --- Cost list (P-030) --- */
 .cost-list {
   display: flex;
