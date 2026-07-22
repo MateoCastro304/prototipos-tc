@@ -44,8 +44,7 @@
           <a class="proto-nav__link" href="P-WizardSeleccionarProveedor.html">P-025 Sel. proveedor</a>
           <a class="proto-nav__link proto-nav__link--active" href="P-WizardProcesosPropios.html">P-026 Procesos</a>
           <a class="proto-nav__link" href="P-WizardSeleccionarProceso.html">P-028 Sel. proceso</a>
-          <a class="proto-nav__link" href="P-WizardTercerizacionPieza.html">P-029 Tercerización</a>
-          <a class="proto-nav__link" href="P-WizardAgregarTratamiento.html">Agregar tratamiento</a>
+          <a class="proto-nav__link" href="P-WizardAgregarRepuesto.html">Agregar repuesto</a>
           <a class="proto-nav__link" href="P-WizardCostosPieza.html">P-030 Costos pieza</a>
           <a class="proto-nav__link" href="P-WizardConjunto.html">Conjunto / ensamble</a>
           <a class="proto-nav__link" href="P-WizardResumen.html">P-033 Resumen y confirmación</a>
@@ -166,7 +165,7 @@
                 <td class="table__td table__td--remove">×</td>
               </tr>
               <tr class="table__add-row">
-                <td><a class="table__add-link" href="#">+ Agregar proceso</a></td>
+                <td><a class="table__add-link" href="P-WizardSeleccionarProceso.html">+ Agregar proceso</a></td>
                 <td></td>
                 <td class="table__td--right table__total-label">Total M.O.</td>
                 <td class="table__td table__td--right table__total-value">$ 14.081</td>
@@ -204,7 +203,7 @@
                 <td class="table__td table__td--remove">×</td>
               </tr>
               <tr class="table__add-row">
-                <td><a class="table__add-link" href="#">+ Agregar tercerizado</a></td>
+                <td><a class="table__add-link" href="P-WizardSeleccionarProceso.html">+ Agregar tercerizado</a></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -240,7 +239,7 @@
                 <td class="table__td table__td--remove">×</td>
               </tr>
               <tr class="table__add-row">
-                <td><a class="table__add-link" href="#">+ Agregar repuesto</a></td>
+                <td><a class="table__add-link" href="P-WizardAgregarRepuesto.html">+ Agregar repuesto</a></td>
                 <td></td>
                 <td></td>
                 <td class="table__td--right table__total-label">Total repuestos</td>
@@ -271,25 +270,24 @@
                 <th class="table__th"></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="treatment-list-body">
               <tr class="table__row">
                 <td class="table__td">Galvanizado</td>
                 <td class="table__td">Metalurgica Sur</td>
                 <td class="table__td table__td--right table__td--price">$ 6.300</td>
                 <td class="table__td table__td--remove">×</td>
               </tr>
-              <tr class="table__add-row">
-                <td><a class="table__add-link" href="P-WizardAgregarTratamiento.html">+ Agregar tratamiento</a></td>
-                <td></td>
-                <td></td>
-                <td></td>
+              <tr id="treatment-add-row" class="table__add-row">
+                <td colspan="4">
+                  <button type="button" id="show-treatment-editor" class="treatment-inline__trigger">+ Agregar</button>
+                </td>
               </tr>
             </tbody>
           </table>
 
-          <div class="subsection">
-            <h3 class="subsection__title">Pintura (campos adicionales)</h3>
-            <div class="form-grid form-grid--3">
+          <div class="treatment-inline__detail treatment-inline__detail--standalone">
+            <div class="treatment-inline__detail-summary">Pintura (campos adicionales)</div>
+            <div class="form-grid form-grid--4">
               <div class="form-field">
                 <label class="form-field__label">Tipo de pintura</label>
                 <input class="form-field__input" type="text" value="Epoxi">
@@ -307,11 +305,15 @@
                 <input class="form-field__input" type="text" value="$ 4.200">
               </div>
               <div class="form-field">
-                <label class="form-field__label">Horas estim.</label>
+                <label class="form-field__label">Cantidad de litros</label>
+                <input class="form-field__input" type="text" value="18">
+              </div>
+              <div class="form-field">
+                <label class="form-field__label">Horas estimadas</label>
                 <input class="form-field__input" type="text" value="1,5 h">
               </div>
               <div class="form-field">
-                <label class="form-field__label">Precio por hora (M.O.)</label>
+                <label class="form-field__label">Precio por hora</label>
                 <input class="form-field__input" type="text" value="$ 1.450">
               </div>
             </div>
@@ -327,5 +329,94 @@
       <a class="btn btn--primary" href="P-WizardCostosPieza.html">Finalizar pieza ›</a>
     </footer>
   </div>
+
+  <script>
+    const treatmentListBody = document.getElementById('treatment-list-body');
+    const addRowPlaceholder = document.getElementById('treatment-add-row');
+    let editorRow = null;
+
+    function showTreatmentEditor() {
+      if (editorRow) {
+        return;
+      }
+
+      editorRow = document.createElement('tr');
+      editorRow.className = 'table__row table__row--editor';
+      editorRow.innerHTML = `
+        <td class="table__td" colspan="3">
+          <div class="treatment-inline__body">
+            <div class="form-grid form-grid--3">
+              <div class="form-field">
+                <label class="form-field__label">Tipo de tratamiento</label>
+                <select id="treatment-type-input" class="form-field__select">
+                  <option value="Pintura">Pintura</option>
+                  <option value="Zincado">Zincado</option>
+                  <option value="Galvanizado">Galvanizado</option>
+                  <option value="Anodizado">Anodizado</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label class="form-field__label">Proveedor</label>
+                <select id="treatment-provider-input" class="form-field__select">
+                  <option value="Pinturas RC">Pinturas RC</option>
+                  <option value="Recubrimientos del Litoral">Recubrimientos del Litoral</option>
+                  <option value="Zincados del Sur">Zincados del Sur</option>
+                  <option value="Metalúrgica Sur">Metalúrgica Sur</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label class="form-field__label">Costo</label>
+                <input id="treatment-cost-input" class="form-field__input" type="text" placeholder="$ 0">
+              </div>
+            </div>
+
+            <div class="treatment-inline__actions">
+              <button type="button" id="cancel-treatment-button" class="btn btn--outline">Cancelar</button>
+              <button type="button" id="save-treatment-button" class="btn btn--primary">Guardar</button>
+            </div>
+          </div>
+        </td>
+      `;
+
+      treatmentListBody.insertBefore(editorRow, addRowPlaceholder);
+    }
+
+    function removeEditorRow() {
+      if (editorRow) {
+        editorRow.remove();
+        editorRow = null;
+      }
+    }
+
+    function saveTreatmentRow() {
+      const type = document.getElementById('treatment-type-input')?.value?.trim() || 'Tratamiento';
+      const provider = document.getElementById('treatment-provider-input')?.value?.trim() || 'Proveedor';
+      const cost = document.getElementById('treatment-cost-input')?.value?.trim() || '$ 0';
+
+      const row = document.createElement('tr');
+      row.className = 'table__row';
+      row.innerHTML = `
+        <td class="table__td">${type}</td>
+        <td class="table__td">${provider}</td>
+        <td class="table__td table__td--right table__td--price">${cost}</td>
+        <td class="table__td table__td--remove">×</td>
+      `;
+
+      treatmentListBody.insertBefore(row, addRowPlaceholder);
+      removeEditorRow();
+    }
+
+    document.getElementById('show-treatment-editor')?.addEventListener('click', showTreatmentEditor);
+
+    treatmentListBody.addEventListener('click', (event) => {
+      if (event.target.id === 'cancel-treatment-button') {
+        removeEditorRow();
+      }
+
+      if (event.target.id === 'save-treatment-button') {
+        saveTreatmentRow();
+      }
+    });
+  </script>
 </body>
 </html>
